@@ -11,8 +11,6 @@ const Portfolio = () => {
   const [typedText, setTypedText] = useState("");
   const [showProjects, setShowProjects] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  
-  const texts = ["OUR PORTFOLIO", "OUR BEST WORK"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -25,6 +23,7 @@ const Portfolio = () => {
   useEffect(() => {
     if (!mounted) return;
 
+    const texts = ["OUR PORTFOLIO", "OUR BEST WORK"];
     const currentFullText = texts[currentTextIndex];
     let timeout: NodeJS.Timeout;
 
@@ -62,7 +61,7 @@ const Portfolio = () => {
     timeout = setTimeout(handleTyping, isDeleting ? 50 : 100);
 
     return () => clearTimeout(timeout);
-  }, [mounted, typedText, isDeleting, currentTextIndex, showProjects, texts]);
+  }, [mounted, typedText, isDeleting, currentTextIndex, showProjects]);
 
   const portfolioItems = [
     {
