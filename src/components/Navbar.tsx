@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useMemo, memo } from "react";
 import Menu from "./Menu";
 
@@ -198,3 +200,4 @@ const Navbar = memo(() => {
 Navbar.displayName = "Navbar";
 
 export default Navbar;
+

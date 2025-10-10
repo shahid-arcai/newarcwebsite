@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 const Process = () => {
@@ -93,3 +95,4 @@ const Process = () => {
 };
 
 export default Process;
+

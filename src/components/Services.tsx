@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -329,3 +331,4 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter
     </motion.div>
   );
 };export default Services;
+

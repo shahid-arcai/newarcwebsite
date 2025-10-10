@@ -1,3 +1,5 @@
+"use client";
+
 import { Package } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -204,3 +206,4 @@ const Integrations = () => {
 };
 
 export default Integrations;
+

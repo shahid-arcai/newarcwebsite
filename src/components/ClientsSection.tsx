@@ -1,3 +1,5 @@
+"use client";
+
 import { memo, useEffect, useState } from "react";
 
 const ClientsSection = memo(() => {
@@ -164,3 +166,4 @@ const ClientsSection = memo(() => {
 ClientsSection.displayName = "ClientsSection";
 
 export default ClientsSection;
+

@@ -1,3 +1,5 @@
+"use client";
+
 import { Cube, Gear, TrendUp, ChatCircleDots } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
@@ -189,3 +191,4 @@ const Features = () => {
 };
 
 export default Features;
+

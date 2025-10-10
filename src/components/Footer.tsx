@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./Footer.css";
@@ -374,3 +376,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

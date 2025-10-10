@@ -1,3 +1,5 @@
+"use client";
+
 /* Auto-generated WhyUs section translated from provided Framer export.
    NOTE: The original markup relied on Framer-specific class names and animations.
    We preserve structure and IDs while making it valid React/JSX. Minimal styling
@@ -175,3 +177,4 @@ const stats: StatItem[] = [
 ];
 
 export default WhyUs;
+

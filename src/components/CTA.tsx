@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 const CTA = () => {
@@ -128,3 +130,4 @@ const CTA = () => {
 };
 
 export default CTA;
+

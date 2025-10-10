@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import "./AIServices.css";
 
@@ -780,3 +782,4 @@ const AIServices = () => {
 };
 
 export default AIServices;
+

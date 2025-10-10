@@ -1,3 +1,5 @@
+"use client";
+
 interface MenuProps {
   isOpen: boolean;
   onClose: () => void;
@@ -226,3 +228,4 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
 };
 
 export default Menu;
+

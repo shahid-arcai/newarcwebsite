@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 import { memo, useEffect, useRef, useState } from "react";
 
@@ -335,3 +337,4 @@ const Hero = memo(() => {
 Hero.displayName = "Hero";
 
 export default Hero;
+

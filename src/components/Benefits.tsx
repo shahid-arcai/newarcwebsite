@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 const fade = {
@@ -205,3 +207,4 @@ const Card = ({ children, index, className = "" }: { children: React.ReactNode; 
 );
 
 export default Benefits;
+
