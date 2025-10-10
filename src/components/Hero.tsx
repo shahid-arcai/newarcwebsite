@@ -1,47 +1,85 @@
 import { ArrowUpRight } from "lucide-react";
-import { memo, useEffect, useRef } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 const Hero = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
     // iOS/iPadOS-specific video autoplay fix
     const video = videoRef.current;
-    if (video) {
-      // Add specific attributes for better iOS/iPad compatibility
-      video.setAttribute('playsinline', 'true');
-      video.setAttribute('webkit-playsinline', 'true');
-      video.setAttribute('x5-playsinline', 'true');
-      
-      // Force load and play
-      video.load();
-      
-      // Attempt to play with error handling
-      const attemptPlay = () => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch((error) => {
-            console.log("Video autoplay prevented:", error);
-            // Retry play on user interaction for iOS/iPad
-            const handleInteraction = () => {
-              video.play().catch(e => console.log("Retry play failed:", e));
-              document.removeEventListener('touchstart', handleInteraction);
-              document.removeEventListener('click', handleInteraction);
-              document.removeEventListener('scroll', handleInteraction);
-            };
-            document.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
-            document.addEventListener('click', handleInteraction, { once: true });
-            document.addEventListener('scroll', handleInteraction, { once: true, passive: true });
-          });
-        }
-      };
-      
-      // Try to play immediately
-      attemptPlay();
-      
-      // Also try after a short delay (helps with some iOS/iPad issues)
-      setTimeout(attemptPlay, 100);
+    if (!video) return;
+
+    // Detection for iOS/iPadOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    console.log('Device detected:', { isIOS, userAgent: navigator.userAgent });
+
+    // Set video properties programmatically for better iOS compatibility
+    video.playsInline = true;
+    video.muted = true;
+    video.autoplay = true;
+    video.loop = true;
+    
+    // Additional iOS-specific attributes
+    if (isIOS) {
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+      video.setAttribute('x-webkit-airplay', 'deny');
     }
+
+    // Force load
+    video.load();
+
+    // Attempt to play with comprehensive error handling
+    const attemptPlay = async () => {
+      try {
+        await video.play();
+        console.log('Video playing successfully');
+        setVideoError(false);
+      } catch (error) {
+        console.error('Video autoplay failed:', error);
+        setVideoError(true);
+        
+        // Setup interaction handlers for iOS/iPad
+        const handleInteraction = async () => {
+          try {
+            await video.play();
+            console.log('Video started after interaction');
+            setVideoError(false);
+            cleanup();
+          } catch (e) {
+            console.error('Video play after interaction failed:', e);
+          }
+        };
+
+        const cleanup = () => {
+          document.removeEventListener('touchstart', handleInteraction);
+          document.removeEventListener('touchend', handleInteraction);
+          document.removeEventListener('click', handleInteraction);
+          document.removeEventListener('scroll', handleInteraction);
+        };
+
+        // Add multiple event listeners
+        document.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
+        document.addEventListener('touchend', handleInteraction, { once: true, passive: true });
+        document.addEventListener('click', handleInteraction, { once: true });
+        document.addEventListener('scroll', handleInteraction, { once: true, passive: true });
+      }
+    };
+
+    // Try to play immediately
+    attemptPlay();
+
+    // Retry after delays (helps with some iOS/iPad timing issues)
+    const timeout1 = setTimeout(() => attemptPlay(), 100);
+    const timeout2 = setTimeout(() => attemptPlay(), 500);
+
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+    };
   }, []);
 
   return (
@@ -53,21 +91,29 @@ const Hero = memo(() => {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          src="/herovideo.mp4"
-          preload="auto"
           playsInline
           autoPlay
           loop
           muted
-          webkit-playsinline="true"
+          preload="metadata"
           className="w-full h-full object-cover scale-100"
           style={{ transformOrigin: 'center center' }}
           aria-hidden="true"
           poster="/placeholder.svg"
+          onLoadedData={() => console.log('Video loaded')}
+          onPlay={() => console.log('Video started playing')}
+          onError={(e) => {
+            console.error('Video error:', e);
+            setVideoError(true);
+          }}
         >
           <source src="/herovideo.mp4" type="video/mp4" />
-          <track kind="captions" />
+          Your browser does not support the video tag.
         </video>
+        {/* Fallback for when video doesn't play */}
+        {videoError && (
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" aria-hidden="true" />
+        )}
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
         {/* Circular/Radial fade at edges (vignette effect) */}
