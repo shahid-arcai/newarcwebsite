@@ -16,11 +16,10 @@ const ClientsSection = memo(() => {
   // Array of trust logos (1-21)
   const logos = Array.from({ length: 21 }, (_, i) => `/trust${i + 1}.png`);
 
-  // Create 24 arms positioned around the circle (more arms = less space between logos)
-  const arms = Array.from({ length: 24 }, (_, i) => ({
-    rotation: i * 15, // 360/24 = 15 degrees each
-    logo1: logos[i % logos.length],
-    logo2: logos[(i + 12) % logos.length],
+  // Create 21 arms positioned around the circle, one for each logo
+  const arms = Array.from({ length: 21 }, (_, i) => ({
+    rotation: i * (360 / 21), // 360/21 ≈ 17.14 degrees each
+    logo: logos[i],
   }));
 
   return (
@@ -53,7 +52,6 @@ const ClientsSection = memo(() => {
                       transformOrigin: "center",
                     }}
                   >
-                    {/* Outer Logo */}
                     <div
                       className="absolute"
                       style={{
@@ -70,32 +68,7 @@ const ClientsSection = memo(() => {
                         }}
                       >
                         <img
-                          src={arm.logo1}
-                          alt="Client logo"
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Inner Logo (opposite side) */}
-                    <div
-                      className="absolute"
-                      style={{
-                        top: "-55px",
-                        left: "50%",
-                        transform: `translateX(-50%) translateY(600px) rotate(180deg)`,
-                      }}
-                    >
-                      <div
-                        className="w-[110px] h-[110px] rounded-full bg-white border-[6px] border-neutral-100 shadow-lg overflow-hidden"
-                        style={{
-                          boxShadow:
-                            "rgba(108, 113, 128, 0.08) 0px 2px 4px 0px, rgba(108, 113, 128, 0.07) 0px 7px 7px 0px, rgba(108, 113, 128, 0.04) 0px 17px 10px 0px, rgba(108, 113, 128, 0.01) 0px 29px 12px 0px",
-                        }}
-                      >
-                        <img
-                          src={arm.logo2}
+                          src={arm.logo}
                           alt="Client logo"
                           className="w-full h-full object-cover"
                           loading="lazy"
