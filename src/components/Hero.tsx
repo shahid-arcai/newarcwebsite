@@ -2,10 +2,13 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { memo, useEffect, useRef, useState } from "react";
+import LoadingScreen from "./LoadingScreen";
 
 const Hero = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     // iOS/iPadOS-specific video autoplay fix
@@ -21,7 +24,6 @@ const Hero = memo(() => {
     // Set video properties programmatically for better iOS compatibility
     video.playsInline = true;
     video.muted = true;
-    video.autoplay = true;
     video.loop = true;
     
     // Additional iOS-specific attributes
@@ -34,84 +36,97 @@ const Hero = memo(() => {
     // Force load
     video.load();
 
-    // Attempt to play with comprehensive error handling
-    const attemptPlay = async () => {
-      try {
-        await video.play();
-        console.log('Video playing successfully');
-        setVideoError(false);
-      } catch (error) {
-        console.error('Video autoplay failed:', error);
-        setVideoError(true);
-        
-        // Setup interaction handlers for iOS/iPad
-        const handleInteraction = async () => {
-          try {
-            await video.play();
-            console.log('Video started after interaction');
-            setVideoError(false);
-            cleanup();
-          } catch (e) {
-            console.error('Video play after interaction failed:', e);
-          }
-        };
-
-        const cleanup = () => {
-          document.removeEventListener('touchstart', handleInteraction);
-          document.removeEventListener('touchend', handleInteraction);
-          document.removeEventListener('click', handleInteraction);
-          document.removeEventListener('scroll', handleInteraction);
-        };
-
-        // Add multiple event listeners
-        document.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
-        document.addEventListener('touchend', handleInteraction, { once: true, passive: true });
-        document.addEventListener('click', handleInteraction, { once: true });
-        document.addEventListener('scroll', handleInteraction, { once: true, passive: true });
-      }
+    // Wait for video to be ready before attempting play
+    const handleCanPlay = () => {
+      setVideoLoaded(true);
+      console.log('Video ready to play');
     };
 
-    // Try to play immediately
-    attemptPlay();
-
-    // Retry after delays (helps with some iOS/iPad timing issues)
-    const timeout1 = setTimeout(() => attemptPlay(), 100);
-    const timeout2 = setTimeout(() => attemptPlay(), 500);
+    video.addEventListener('canplaythrough', handleCanPlay);
 
     return () => {
-      clearTimeout(timeout1);
-      clearTimeout(timeout2);
+      video.removeEventListener('canplaythrough', handleCanPlay);
     };
   }, []);
 
+  // Play video only after loading screen is complete and video is ready
+  useEffect(() => {
+    if (!isLoading && videoLoaded && videoRef.current) {
+      const video = videoRef.current;
+      
+      const attemptPlay = async () => {
+        try {
+          await video.play();
+          console.log('Video playing successfully');
+          setVideoError(false);
+        } catch (error) {
+          console.error('Video autoplay failed:', error);
+          setVideoError(true);
+          
+          // Setup interaction handlers for iOS/iPad
+          const handleInteraction = async () => {
+            try {
+              await video.play();
+              console.log('Video started after interaction');
+              setVideoError(false);
+              cleanup();
+            } catch (e) {
+              console.error('Video play after interaction failed:', e);
+            }
+          };
+
+          const cleanup = () => {
+            document.removeEventListener('touchstart', handleInteraction);
+            document.removeEventListener('touchend', handleInteraction);
+            document.removeEventListener('click', handleInteraction);
+            document.removeEventListener('scroll', handleInteraction);
+          };
+
+          // Add multiple event listeners
+          document.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
+          document.addEventListener('touchend', handleInteraction, { once: true, passive: true });
+          document.addEventListener('click', handleInteraction, { once: true });
+          document.addEventListener('scroll', handleInteraction, { once: true, passive: true });
+        }
+      };
+
+      attemptPlay();
+    }
+  }, [isLoading, videoLoaded]);
+
   return (
-    <section 
-      className="relative h-screen flex flex-col overflow-hidden" 
-      aria-label="Hero section"
-    >
-      {/* Video Background - Full Screen Edge to Edge */}
-      <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          playsInline
-          autoPlay
-          loop
-          muted
-          preload="metadata"
-          className="w-full h-full object-cover scale-100"
-          style={{ transformOrigin: 'center center' }}
-          aria-hidden="true"
-          poster="/placeholder.svg"
-          onLoadedData={() => console.log('Video loaded')}
-          onPlay={() => console.log('Video started playing')}
-          onError={(e) => {
-            console.error('Video error:', e);
-            setVideoError(true);
-          }}
-        >
-          <source src="/herovideo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+    <>
+      {isLoading && <LoadingScreen onLoadComplete={() => setIsLoading(false)} />}
+      
+      <section 
+        className="relative h-screen flex flex-col overflow-hidden" 
+        aria-label="Hero section"
+      >
+        {/* Video Background - Full Screen Edge to Edge */}
+        <div className="absolute inset-0 z-0">
+          <video
+            ref={videoRef}
+            playsInline
+            loop
+            muted
+            preload="auto"
+            className="w-full h-full object-cover scale-100"
+            style={{ transformOrigin: 'center center' }}
+            aria-hidden="true"
+            poster="/placeholder.svg"
+            onLoadedData={() => {
+              console.log('Video loaded');
+              setVideoLoaded(true);
+            }}
+            onPlay={() => console.log('Video started playing')}
+            onError={(e) => {
+              console.error('Video error:', e);
+              setVideoError(true);
+            }}
+          >
+            <source src="/herovideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         {/* Fallback for when video doesn't play */}
         {videoError && (
           <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" aria-hidden="true" />
@@ -331,6 +346,7 @@ const Hero = memo(() => {
         </div>
       </div>
     </section>
+    </>
   );
 });
 
