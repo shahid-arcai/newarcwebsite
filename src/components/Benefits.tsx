@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variant } from "framer-motion";
 
 const fade = {
   hidden: { opacity: 0, y: 24 },
-  show: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] } }),
+  show: (i: number): Variant => ({ opacity: 1, y: 0, transition: { delay: i * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } }),
 };
 
 const Benefits = () => {

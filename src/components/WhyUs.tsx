@@ -7,11 +7,11 @@
    recreate with Tailwind / Framer Motion.
 */
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView, Variants } from "framer-motion";
 
 const title = "NUMBERS DON'T LIE";
 
-const letterContainer = {
+const letterContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -19,12 +19,12 @@ const letterContainer = {
   },
 };
 
-const letterVariant = {
+const letterVariant: Variants = {
   hidden: { y: `0.55em`, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   },
 };
 
@@ -155,7 +155,7 @@ const Stat = ({ item, index }: { item: StatItem; index: number }) => {
       animate={controls}
       variants={{
         hidden: { opacity: 0, y: 40 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 } },
+        show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: index * 0.1 } },
       }}
     >
       <div className="flex items-baseline gap-1 text-6xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl">

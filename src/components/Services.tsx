@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
-const letterContainer = {
+const letterContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -11,12 +11,12 @@ const letterContainer = {
   },
 };
 
-const letterVariant = {
+const letterVariant: Variants = {
   hidden: { y: "0.55em", opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   },
 };
 
