@@ -154,7 +154,7 @@ interface ServiceItemProps {
 const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter, onMouseLeave }) => {
   return (
     <motion.div
-      className="relative cursor-pointer transition-all duration-500 mx-auto max-w-7xl"
+      className="relative cursor-pointer transition-all duration-500 mx-auto max-w-7xl md:!px-8 md:!py-12"
       style={{
         backgroundColor: isOpen ? "rgb(24, 24, 24)" : "transparent",
       }}
@@ -171,13 +171,6 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter
       transition={{
         duration: 0.8,
         ease: [0.22, 1, 0.36, 1],
-      }}
-      className="md:!px-8 md:!py-12"
-      style={{
-        paddingTop: isOpen ? "24px" : "24px",
-        paddingBottom: isOpen ? "24px" : "24px",
-        paddingLeft: "16px",
-        paddingRight: "16px",
       }}
     >
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-12 md:gap-8">
