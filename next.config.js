@@ -8,6 +8,14 @@ const nextConfig = {
   trailingSlash: false,
   // Disable x-powered-by header
   poweredByHeader: false,
+  // Exclude old Vite files from build
+  eslint: {
+    ignoreDuringBuilds: false,
+    dirs: ['src/app', 'src/components', 'src/lib', 'src/hooks'],
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
 }
 
 export default nextConfig

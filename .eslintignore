@@ -1,0 +1,7 @@
+src/pages
+src/App.tsx
+src/main.tsx
+node_modules
+.next
+out
+dist
