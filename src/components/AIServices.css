@@ -1,0 +1,745 @@
+/* AI Services Custom Framer Styles */
+
+/* Container */
+.framer-kt4eez-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+/* Main Card */
+.framer-Jr7KD {
+  display: flex;
+  flex-direction: column;
+  padd.framer-ayzamz-container,
+.framer-10v5pq5-container,
+.framer-7wodu2-container,
+.framer-zowy1b-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* AI-Powered Chatbots Card Styles */
+.framer-hnkli9-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.framer-jZiMA {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+  position: relative;
+  min-height: 350px;
+}
+
+.framer-kDPtm,
+.framer-4P3Vk,
+.framer-7tolu,
+.framer-1l6ndfz,
+.framer-v-6ng249 {
+  position: relative;
+}
+
+/* Text Container */
+.framer-1je26na {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.framer-axpwie {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.framer-otmbr {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Chat Bubble - Top */
+.framer-fx0oj2 {
+  display: flex;
+  padding: 12px 16px;
+  position: absolute;
+  top: 160px;
+  right: 16px;
+  max-width: 80%;
+  align-items: center;
+}
+
+.framer-1fiyuj9 {
+  width: 100%;
+}
+
+/* User Icon */
+.framer-99z3n0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 160px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+}
+
+.framer-15mjlu7-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* Chat Bubble - Bottom */
+.framer-1aim1w3 {
+  display: flex;
+  padding: 12px 16px;
+  position: absolute;
+  bottom: 80px;
+  left: 16px;
+  max-width: 80%;
+  align-items: center;
+}
+
+.framer-y3ayhs {
+  width: 100%;
+}
+
+/* Sparkle Icon */
+.framer-1xij3f2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 80px;
+  left: 24px;
+  width: 40px;
+  height: 40px;
+}
+
+.framer-112n03h-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* Text Styles */
+.framer-styles-preset-12su4sl,
+.framer-styles-preset-1y7m99z {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.framer-styles-preset-1snln9b {
+  font-weight: 600;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.8);
+}
+gap: 20px;
+  position: relative;
+}
+
+.framer-iFxbV,
+.framer-KSfoj,
+.framer-XTXCe,
+.framer-12wrqa9,
+.framer-v-ully58 {
+  position: relative;
+}
+
+/* Search Box */
+.framer-15xx1i4 {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+}
+
+.framer-53bk6q {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+}
+
+/* Icon Container */
+.framer-vbds0p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.framer-jeb1dw {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.framer-8991h9-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+
+.framer-lvFJX {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.framer-cgo0qx,
+.framer-v-zcboag {
+  position: relative;
+}
+
+/* Option Items */
+.framer-dvipwj,
+.framer-18jmtyc,
+.framer-2dawv9 {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  position: relative;
+}
+
+.framer-2q1dkc,
+.framer-whm74r,
+.framer-1863du7 {
+  display: flex;
+  width: 100%;
+}
+
+.framer-1oqlkuc,
+.framer-86fogr,
+.framer-1jwmz5h {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.framer-text {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* Text Container */
+.framer-1mdub7q {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  width: auto;
+}
+
+.framer-y6ka51 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.framer-styles-preset-yhre11 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.framer-rwnj9r {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.framer-styles-preset-1khckfh {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Utility Classes */
+.ssr-variant {
+  width: 100%;
+  height: 100%;
+}
+
+.hidden-72rtr7 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Automated Workflows Card Styles */
+.framer-1wwoz27-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.framer-A6AVs {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+  position: relative;
+  min-height: 350px;
+}
+
+.framer-15yvlo1,
+.framer-v-136waa3 {
+  position: relative;
+}
+
+/* Logo Box */
+.framer-pz6kyd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.framer-1js7rer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.framer-px05cb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 50px;
+}
+
+/* Text Container for Automated Workflows */
+.framer-1cff9aq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  right: 30px;
+  width: auto;
+}
+
+.framer-1bik22 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.framer-7jbq8h {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Icon Containers - Positioned around the card */
+.framer-1pg7jle,
+.framer-1hiz4pg,
+.framer-169ow0l,
+.framer-x5ef0m {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+}
+
+/* Discord - top-left area */
+.framer-1pg7jle {
+  top: 55px;
+  left: 20%;
+}
+
+/* Diamond/Google Drive - top-right area */
+.framer-1hiz4pg {
+  top: 55px;
+  left: 80%;
+}
+
+/* OpenAI - bottom-left area */
+.framer-169ow0l {
+  top: 130px;
+  left: 20%;
+}
+
+/* GitHub - bottom-right area */
+.framer-x5ef0m {
+  top: 130px;
+  left: 80%;
+}
+
+.framer-ayzamz-container,
+.framer-10v5pq5-container,
+.framer-7wodu2-container,
+.framer-zowy1b-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.framer-ayzamz-container svg,
+.framer-10v5pq5-container svg,
+.framer-7wodu2-container svg,
+.framer-zowy1b-container svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* AI-Powered Chatbots Card */
+.framer-hnkli9-container {
+  flex: none;
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.framer-jZiMA {
+  align-content: start;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 20px;
+  height: min-content;
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 30px;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+
+.framer-1je26na {
+  align-content: start;
+  align-items: start;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: min-content;
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 0px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  width: auto;
+  z-index: 1;
+}
+
+.framer-axpwie {
+  flex: none;
+  height: auto;
+  position: relative;
+  white-space: pre-wrap;
+  width: 100%;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.framer-otmbr {
+  flex: none;
+  height: auto;
+  position: relative;
+  white-space: pre-wrap;
+  width: 100%;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/* Top Chat Bubble (User Message) */
+.framer-fx0oj2 {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: min-content;
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 10px 15px;
+  position: absolute;
+  right: 70px;
+  top: 80px;
+  width: 220px;
+  z-index: 2;
+}
+
+.framer-1fiyuj9 {
+  flex: 1 0 0px;
+  height: auto;
+  position: relative;
+  white-space: pre-wrap;
+  width: 1px;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/* User Icon Circle */
+.framer-99z3n0 {
+  aspect-ratio: 1 / 1;
+  flex: none;
+  height: var(--framer-aspect-ratio-supported, 40px);
+  overflow: visible;
+  position: absolute;
+  right: 30px;
+  top: 80px;
+  width: 40px;
+  z-index: 3;
+}
+
+.framer-15mjlu7-container {
+  flex: none;
+  height: 24px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+}
+
+/* Bottom Chat Bubble (AI Response) */
+.framer-1aim1w3 {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: min-content;
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 10px 15px;
+  position: absolute;
+  left: 70px;
+  top: 160px;
+  width: 220px;
+  z-index: 2;
+}
+
+.framer-y3ayhs {
+  flex: 1 0 0px;
+  height: auto;
+  position: relative;
+  white-space: pre-wrap;
+  width: 1px;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/* AI Sparkle Icon Circle */
+.framer-1xij3f2 {
+  aspect-ratio: 1 / 1;
+  flex: none;
+  height: var(--framer-aspect-ratio-supported, 40px);
+  overflow: visible;
+  position: absolute;
+  left: 30px;
+  top: 160px;
+  width: 40px;
+  z-index: 3;
+}
+
+.framer-112n03h-container {
+  flex: none;
+  height: 24px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+}
+
+/* -------------------------------------------------- */
+/* Overrides requested: black background for all 3 cards */
+/* and white bottom text only (keep top graphics/icons) */
+/* -------------------------------------------------- */
+/* Target the outer card containers */
+.framer-Jr7KD,
+.framer-A6AVs,
+.framer-jZiMA {
+  background-color: #000 !important;
+}
+
+/* Bottom text containers inside each card (existing classes used) */
+/* Content Generation & Automated Workflows & Chatbots paragraphs */
+.framer-rwnj9r .framer-text,
+.framer-7jbq8h .framer-text,
+.framer-otmbr .framer-text {
+  color: #fff !important;
+}
+
+/* Ensure headings remain readable (if they inherit dark styles elsewhere) */
+.framer-y6ka51 .framer-text,
+.framer-1bik22 .framer-text,
+.framer-axpwie .framer-text {
+  color: #fff;
+}
+
+/* Preserve icon/background elements by NOT overriding their individual backgrounds */
+/* End overrides */
+
+/* First card inner white container override (search box + inner row) */
+.framer-Jr7KD .framer-15xx1i4,
+.framer-Jr7KD .framer-53bk6q {
+  background-color: #000 !important;
+}
+/* Make inner search option text and blinking cursor white */
+.framer-Jr7KD .framer-15xx1i4 .framer-text {
+  color: #fff !important;
+}
+.framer-Jr7KD .framer-15xx1i4 .blinking-cursor {
+  background-color: #fff !important;
+}
+/* Add visible bottom horizontal line for typing area */
+.framer-Jr7KD .framer-53bk6q {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 0 !important; /* ensure line spans full width */
+}
+
+/* Optional stronger line on hover/focus (safe enhancement) */
+.framer-Jr7KD .framer-53bk6q:hover,
+.framer-Jr7KD .framer-53bk6q:focus-within {
+  border-bottom-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* -------------------------------------------------- */
+/* Mobile Responsive Styles - First Card Only */
+/* -------------------------------------------------- */
+@media (max-width: 768px) {
+  /* First card - Content Generation */
+  .framer-Jr7KD {
+    min-height: 350px !important;
+    padding: 20px !important;
+  }
+
+  /* Search box container - reduce padding on mobile */
+  .framer-15xx1i4 {
+    padding: 12px !important;
+    gap: 8px !important;
+  }
+
+  /* Inner search input row - reduce padding */
+  .framer-53bk6q {
+    padding: 10px 12px !important;
+    gap: 8px !important;
+  }
+
+  /* Text options - reduce spacing */
+  .framer-dvipwj,
+  .framer-18jmtyc,
+  .framer-2dawv9 {
+    padding: 8px 12px !important;
+  }
+
+  /* Make text smaller on mobile for options */
+  .framer-1oqlkuc .framer-text,
+  .framer-86fogr .framer-text,
+  .framer-1jwmz5h .framer-text {
+    font-size: 13px !important;
+  }
+
+  /* Bottom text container - adjust positioning */
+  .framer-1mdub7q {
+    bottom: 20px !important;
+    left: 20px !important;
+    right: 20px !important;
+    gap: 8px !important;
+  }
+
+  /* Heading text - reduce size on mobile */
+  .framer-y6ka51 .framer-styles-preset-yhre11 {
+    font-size: 18px !important;
+  }
+
+  /* Paragraph text - reduce size on mobile */
+  .framer-rwnj9r .framer-styles-preset-1khckfh {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Icon container - make smaller */
+  .framer-vbds0p {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Blinking cursor - make smaller */
+  .framer-vbds0p .blinking-cursor {
+    width: 1.5px !important;
+    height: 16px !important;
+  }
+}
+

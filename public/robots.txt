@@ -1,0 +1,43 @@
+# robots.txt for ARC AI
+# https://arcai.agency/robots.txt
+
+# Sitemap location
+Sitemap: https://arcai.agency/sitemap.xml
+
+# Major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Allow all other crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Rate limit for aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+

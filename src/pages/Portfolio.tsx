@@ -1,0 +1,374 @@
+import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
+import CTA from "@/components/CTA";
+
+const Portfolio = () => {
+  const [mounted, setMounted] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const [showProjects, setShowProjects] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+  
+  const texts = ["OUR PORTFOLIO", "OUR BEST WORK"];
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Typing and deleting animation effect
+  useEffect(() => {
+    if (!mounted) return;
+
+    const currentFullText = texts[currentTextIndex];
+    let timeout: NodeJS.Timeout;
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Typing forward
+        if (typedText.length < currentFullText.length) {
+          setTypedText(currentFullText.slice(0, typedText.length + 1));
+          timeout = setTimeout(handleTyping, 100); // Typing speed
+        } else {
+          // Finished typing, show projects on first completion
+          if (!showProjects) {
+            setShowProjects(true);
+          }
+          
+          // Wait before starting to delete
+          const waitTime = currentTextIndex === 0 ? 3000 : 2000; // 3s for Portfolio, 2s for Best Work
+          timeout = setTimeout(() => {
+            setIsDeleting(true);
+          }, waitTime);
+        }
+      } else {
+        // Deleting (backspace effect)
+        if (typedText.length > 0) {
+          setTypedText(typedText.slice(0, -1));
+          timeout = setTimeout(handleTyping, 50); // Faster deletion speed
+        } else {
+          // Finished deleting, switch to next text
+          setIsDeleting(false);
+          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+        }
+      }
+    };
+
+    timeout = setTimeout(handleTyping, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [mounted, typedText, isDeleting, currentTextIndex, showProjects, texts]);
+
+  const portfolioItems = [
+    {
+      id: 1,
+      title: "DEK Studio",
+      description: "Built a trust-forward MEP site that showcases end-to-end capability with clear project pathways.",
+      results: "Leads ↑ 31%, Proposal requests ↑ 24%, Avg. time on Services/Case Studies 2:18, Core Web Vitals pass 92%",
+      image: "/dek-studio.png",
+      link: "https://www.dek-studio.com/",
+      status: "live"
+    },
+    {
+      id: 2,
+      title: "Vibe Web Studio",
+      description: "Sales-first agency site with crisp offers, social proof, and conversion-optimized packages.",
+      results: "Qualified leads ↑ 1.9×, Form CVR ↑ +3.2pp (to 6.8%), SQLs/month 18 → 33, LCP 1.9s",
+      image: "/vibewebstudio.png",
+      link: "https://vibewebstudio.com",
+      status: "live"
+    },
+    {
+      id: 3,
+      title: "YBO Agency",
+      description: "'Creative back office' positioning with modular service blocks and fast quote flows.",
+      results: "Inbound briefs ↑ 27%, Avg. deal size ↑ 14%, Bounce ↓ 11%, Return visits ↑ 22%",
+      image: "/yboagency.png",
+      link: "https://yboagency.com",
+      status: "live"
+    },
+    {
+      id: 4,
+      title: "Car Rush",
+      description: "Marketplace UX for verified vehicles with transparent pricing and smart filters.",
+      results: "Listing views ↑ 38%, Contact-dealer CTR ↑ +2.6pp (to 9.4%), Saved searches 1.2k/mo, PDP exit ↓ 15%",
+      image: "/carrush.png",
+      link: "https://www.carrush.lk/",
+      status: "live"
+    },
+    {
+      id: 5,
+      title: "Car Arena Ceylon",
+      description: "Dealer site emphasizing warranties, OEM upgrades, and nationwide support.",
+      results: "Test-drive bookings ↑ 29%, Finance enquiries ↑ 21%, Mobile call clicks ↑ 34%, LCP 2.2s",
+      image: "/cararenaceylon.png",
+      link: "https://www.cararenaceylon.com/",
+      status: "live"
+    },
+    {
+      id: 6,
+      title: "Hilltop Recruitment",
+      description: "Heritage-led global recruitment with outcome-driven sector pages.",
+      results: "Candidate sign-ups ↑ 23%, Client enquiries ↑ 18%, Time-to-apply ↓ 17%, Organic impressions ↑ 41%",
+      image: "/hiltopglobal.png",
+      link: "https://hiltopglobal.com/",
+      status: "live"
+    },
+    {
+      id: 7,
+      title: "Island Jerky",
+      description: "Artisan Sri Lankan jerky with flavor storytelling and fast checkout.",
+      results: "Conversion rate ↑ +0.7pp (to 2.4%), AOV ↑ 12%, Add-to-cart ↑ 19%, Email capture 4.6%",
+      image: "/islandjerky.png",
+      link: "https://www.islandjerky.lk/",
+      status: "live"
+    },
+    {
+      id: 8,
+      title: "Digital Kade",
+      description: "Scalable catalogue UX; speed, filters, and useful search.",
+      results: "Search-to-purchase ↑ +2.1pp (to 6.3%), Revenue ↑ 16%, Pages/session 3.1 → 4.2, CLS ≤0.06",
+      image: "/digitalkade.png",
+      link: "https://digitalkade.lk/",
+      status: "live"
+    },
+    {
+      id: 9,
+      title: "Jacob Day Coaching",
+      description: "High-accountability coaching with risk-reversal guarantee.",
+      results: "Discovery calls ↑ 26%, Program sign-ups ↑ 19%, Refund rate 1.8%, Social-proof clicks 540/mo",
+      image: "/jacobday.png",
+      link: "https://www.jacobday.co/",
+      status: "live"
+    },
+    {
+      id: 10,
+      title: "Mouttaki Coaching",
+      description: "8-week transformation program with friction-free onboarding.",
+      results: "Lead→Client conversion ↑ +3.8pp (to 12.5%), CAC ↓ 14%, Completion rate 88%, NPS 64",
+      image: "/mouttakicoaching.png",
+      link: "https://mouttakicoaching.com/",
+      status: "live"
+    },
+    {
+      id: 11,
+      title: "Fit Bite",
+      description: "Handcrafted protein-cookie brand with Ceylon flavors and custom protein (10–50 g).",
+      results: "Online sales ↑ 21%, AOV ↑ 11%, Subscribe-and-save uptake 7.9%, Repeat purchase 24%",
+      image: "/fitbite.png",
+      link: "https://www.fitbite.shop/",
+      status: "development"
+    },
+    {
+      id: 12,
+      title: "Ceylon Tea Land",
+      description: "Exporter presence highlighting authentic highland teas and sustainability.",
+      results: "Export enquiries ↑ 32%, Sample requests 58/mo, Top-10 keyword count 4 → 11, Intl. sessions ↑ 37%",
+      image: "/ceylontealandwebsite.png",
+      link: "https://ceylontealandwebsite.netlify.app/",
+      status: "development"
+    },
+    {
+      id: 13,
+      title: "Inlaid Jewelry",
+      description: "Three-generation family jeweler blending Tamil tradition with modern elegance.",
+      results: "Custom consults ↑ 28%, High-ticket orders ↑ 17%, Avg. session value ↑ 13%, Organic clicks ↑ 36%",
+      image: "/cosmic-dusk.png",
+      link: "https://cosmic-dusk-c32013.netlify.app/",
+      status: "development"
+    },
+    {
+      id: 14,
+      title: "Hijab Boutique",
+      description: "Premium hijabs & modest fashion with streamlined PDPs and 30-day free returns.",
+      results: "Conversion rate ↑ +0.9pp (to 2.8%), Return rate ↓ 8%, Mobile CVR ↑ +1.1pp, Checkout abandonment ↓ 6%",
+      image: "/hijabboutiquestore.png",
+      link: "https://hijabboutiquestore.netlify.app/",
+      status: "development"
+    },
+    {
+      id: 15,
+      title: "Busy-Parent Fitness Guide",
+      description: "Lead-magnet microsite with a tight value ladder.",
+      results: "Lead capture 38%, Cost/lead ↓ 23%, Email open rate 41%, Guide downloads 820/mo",
+      image: "/mellifluous-jalebi.png",
+      link: "https://mellifluous-jalebi-dd6aef.netlify.app/",
+      status: "development"
+    },
+    {
+      id: 16,
+      title: "Essential Marketing",
+      description: "Studio site turning briefs into bookable packages.",
+      results: "Booked projects ↑ 22%, Proposal acceptance ↑ +6.4pp (to 38%), Pipeline value LKR 14.6M, Avg. response time ↓ 19%",
+      image: "/essentialmarketing.png",
+      link: "https://essentialmarketing.netlify.app",
+      status: "development"
+    },
+    {
+      id: 17,
+      title: "Ceylon Motors",
+      description: "Car discovery hub for buy/rent with type & price filters.",
+      results: "Filtered searches ↑ 33%, Dealer contacts 210/mo, Bounce ↓ 12%, Session duration 3:04",
+      image: "/ceylonmotors.png",
+      link: "https://ceylonmotors.netlify.app",
+      status: "development"
+    },
+    {
+      id: 18,
+      title: "Arc AI Portfolio",
+      description: "Modern AI-powered portfolio showcase with advanced animations.",
+      results: "Currently in development",
+      image: "/prismatic-mooncake.png",
+      link: "https://prismatic-mooncake-640ca9.netlify.app",
+      status: "development"
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <Navbar />
+      <FloatingActions />
+
+      {/* Hero Section */}
+      <section className="relative px-6 lg:px-12 pt-48 lg:pt-56 pb-16 lg:pb-20">
+        <div className="max-w-[1800px] w-full mx-auto">
+          <div
+            className={`transition-all duration-1000 ${
+              mounted
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            <h1
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none tracking-tight mb-12 lg:mb-16 uppercase"
+              style={{
+                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+              }}
+            >
+              {typedText}
+              <span className="inline-block w-[3px] h-[0.9em] bg-white ml-1 animate-cursor-blink align-middle"></span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Grid */}
+      <section className="relative px-6 lg:px-12 pb-32">
+        <div className="max-w-[1800px] w-full mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {portfolioItems.map((item, index) => (
+              <a
+                key={item.id}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group cursor-pointer transition-all duration-700 ${
+                  showProjects
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+                style={{
+                  transitionDelay: showProjects ? `${index * 150}ms` : "0ms",
+                }}
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-6 bg-zinc-900">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  />
+                  
+                  {/* Status Badge */}
+                  <div className="absolute top-4 right-4">
+                    <span
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider ${
+                        item.status === "live"
+                          ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                          : "bg-orange-500/20 text-orange-400 border border-orange-500/30"
+                      }`}
+                    >
+                      {item.status === "live" ? "Live" : "In Development"}
+                    </span>
+                  </div>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center backdrop-blur-sm bg-white/10">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Info */}
+                <div className="space-y-3">
+                  <h3
+                    className="text-3xl md:text-4xl font-bold text-white group-hover:text-[rgb(255,73,37)] transition-colors duration-300 uppercase"
+                    style={{
+                      fontFamily:
+                        "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-base md:text-lg text-zinc-300 leading-relaxed">
+                    {item.description}
+                  </p>
+                  
+                  {/* Results */}
+                  <div className="pt-3 mt-3 border-t border-zinc-700/50">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg
+                        className="w-4 h-4 text-green-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                        />
+                      </svg>
+                      <p className="text-xs text-green-500 uppercase tracking-wider font-bold">
+                        Results
+                      </p>
+                    </div>
+                    <p className="text-sm md:text-base text-zinc-200 leading-relaxed font-medium">
+                      {item.results}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <CTA />
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Portfolio;
