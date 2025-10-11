@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://arcai.agency/portfolio",
     type: "website",
     images: [{
-      url: "https://arcai.agency/logo.png",
+      url: "https://arcai.agency/shareimage.png",
       width: 1200,
       height: 630,
       alt: "ARC Digital Canvas Portfolio"
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Portfolio - Our Best Work | ARC Digital Canvas",
     description: "Explore our portfolio of successful projects",
-    images: ["https://arcai.agency/logo.png"]
+    images: ["https://arcai.agency/shareimage.png"]
   },
   alternates: {
     canonical: "https://arcai.agency/portfolio"

@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     description: 'Leading AI-powered digital agency in UK & Sri Lanka. Expert web design, branding, AI automation, chatbots, content generation & digital marketing services.',
     images: [
       {
-        url: 'https://arcai.agency/logo.png',
+        url: 'https://arcai.agency/shareimage.png',
         width: 1200,
         height: 630,
         alt: 'ARC Digital Canvas - AI Digital Agency',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ARC Digital Canvas - AI Web Design & Digital Marketing Agency',
     description: 'Leading AI-powered digital agency in UK & Sri Lanka. Expert web design, branding, AI automation & digital marketing.',
-    images: ['https://arcai.agency/logo.png'],
+    images: ['https://arcai.agency/shareimage.png'],
     creator: '@arcdigitalcanvas',
     site: '@arcdigitalcanvas',
   },

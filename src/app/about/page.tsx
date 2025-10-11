@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://arcai.agency/about",
     type: "website",
     images: [{
-      url: "https://arcai.agency/logo.png",
+      url: "https://arcai.agency/shareimage.png",
       width: 1200,
       height: 630,
       alt: "About ARC Digital Canvas"
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About ARC Digital Canvas - AI Digital Agency",
     description: "Leading AI-powered digital agency serving UK and Sri Lanka",
-    images: ["https://arcai.agency/logo.png"]
+    images: ["https://arcai.agency/shareimage.png"]
   },
   alternates: {
     canonical: "https://arcai.agency/about"
