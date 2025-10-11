@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://arcai.agency/contact",
     type: "website",
     images: [{
-      url: "https://arcai.agency/shareimage.png",
+      url: "https://arcai.agency/shareimage-1200x630.png",
       width: 1200,
       height: 630,
       alt: "Contact ARC Digital Canvas"
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact ARC Digital Canvas",
     description: "Get in touch for AI-powered digital solutions",
-    images: ["https://arcai.agency/shareimage.png"]
+    images: ["https://arcai.agency/shareimage-1200x630.png"]
   },
   alternates: {
     canonical: "https://arcai.agency/contact"
