@@ -64,9 +64,9 @@ export default function PortfolioHero() {
   return (
     <section className="relative min-h-[50vh] w-full flex items-center justify-center px-6 pt-48 pb-20 bg-black">
       <div className="max-w-7xl mx-auto text-center">
-        <div className="flex justify-center items-center mb-6">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white uppercase leading-none tracking-tight inline-flex items-center justify-center min-w-[90vw] md:min-w-0">
-            <span className="inline-block text-center">
+        <div className="flex justify-center items-center mb-6 min-h-[120px] md:min-h-[160px]">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white uppercase leading-none tracking-tight relative w-full">
+            <span className="inline-block min-w-[280px] sm:min-w-[350px] md:min-w-[600px] lg:min-w-[800px] xl:min-w-[1000px] text-center">
               {mounted ? (
                 <>
                   {typedText}
