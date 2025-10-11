@@ -117,8 +117,16 @@ export default function SchemaOrg({
     "@type": "ProfessionalService",
     "@id": "https://arcai.agency/#localbusiness-uk",
     "name": "ARC Digital Canvas - UK",
-    "image": "https://arcai.agency/logo.png",
+    "alternateName": "ARC AI Agency UK",
     "url": "https://arcai.agency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://arcai.agency/logo.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "AI-powered digital agency in UK specializing in web design, branding, and AI automation services.",
+    "email": "info@arcai.agency",
     "telephone": "+44-xxx-xxx-xxxx",
     "priceRange": "£££",
     "address": {
@@ -130,6 +138,10 @@ export default function SchemaOrg({
     "geo": {
       "@type": "GeoCoordinates",
       "addressCountry": "GB"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Kingdom"
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -146,7 +158,14 @@ export default function SchemaOrg({
     "sameAs": [
       "https://www.linkedin.com/company/arcdigitalcanvas",
       "https://twitter.com/arcdigitalcanvas"
-    ]
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+44-xxx-xxx-xxxx",
+      "contactType": "customer service",
+      "areaServed": "GB",
+      "availableLanguage": ["en"]
+    }
   };
 
   // Local Business Schema for Sri Lanka
@@ -155,8 +174,16 @@ export default function SchemaOrg({
     "@type": "ProfessionalService",
     "@id": "https://arcai.agency/#localbusiness-sl",
     "name": "ARC Digital Canvas - Sri Lanka",
-    "image": "https://arcai.agency/logo.png",
+    "alternateName": "ARC AI Agency Sri Lanka",
     "url": "https://arcai.agency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://arcai.agency/logo.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "AI-powered digital agency in Sri Lanka specializing in web design, branding, and AI automation services.",
+    "email": "info@arcai.agency",
     "telephone": "+94-xxx-xxx-xxxx",
     "priceRange": "LKR",
     "address": {
@@ -168,6 +195,10 @@ export default function SchemaOrg({
     "geo": {
       "@type": "GeoCoordinates",
       "addressCountry": "LK"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Sri Lanka"
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -184,7 +215,14 @@ export default function SchemaOrg({
     "sameAs": [
       "https://www.linkedin.com/company/arcdigitalcanvas",
       "https://www.facebook.com/arcdigitalcanvas"
-    ]
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+94-xxx-xxx-xxxx",
+      "contactType": "customer service",
+      "areaServed": "LK",
+      "availableLanguage": ["en"]
+    }
   };
 
   // Website Schema
@@ -290,7 +328,7 @@ export default function SchemaOrg({
   } : null;
 
   // Combine schemas based on page type
-  const schemas = [organizationSchema, websiteSchema];
+  const schemas: any[] = [organizationSchema, websiteSchema];
   
   if (type === 'home' || type === 'about' || type === 'contact') {
     schemas.push(localBusinessSchemaUK, localBusinessSchemaSL);

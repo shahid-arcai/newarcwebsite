@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ArrowUpRight, FileText, Image, Mail, MessageSquare, Pen, Sparkles, Video } from "lucide-react";
+import { ArrowUpRight, FileText, Image as ImageIcon, Mail, MessageSquare, Pen, Sparkles, Video } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 
@@ -151,7 +151,7 @@ export default function AIContentGenerationPage() {
                 items: ["YouTube scripts", "Ads", "Explainers", "Social videos"]
               },
               {
-                icon: <Image className="w-8 h-8" aria-hidden="true" />,
+                icon: <ImageIcon className="w-8 h-8" />,
                 title: "Ad Copy",
                 items: ["Google Ads", "Facebook Ads", "Headlines", "Descriptions"]
               },
