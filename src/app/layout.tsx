@@ -70,6 +70,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://arcai.agency/shareimage-1200x630.png',
+        secureUrl: 'https://arcai.agency/shareimage-1200x630.png',
         width: 1200,
         height: 630,
         alt: 'ARC AI - AI Automation and Digital Marketing Company',
@@ -77,6 +78,7 @@ export const metadata: Metadata = {
       },
       {
         url: 'https://arcai.agency/shareimage-1200x627.png',
+        secureUrl: 'https://arcai.agency/shareimage-1200x627.png',
         width: 1200,
         height: 627,
         alt: 'ARC AI - AI Automation and Digital Marketing Company',
@@ -84,6 +86,7 @@ export const metadata: Metadata = {
       },
       {
         url: 'https://arcai.agency/shareimage-800x418.png',
+        secureUrl: 'https://arcai.agency/shareimage-800x418.png',
         width: 800,
         height: 418,
         alt: 'ARC AI - AI Automation and Digital Marketing Company',
@@ -95,7 +98,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ARC AI - AI Automation and Digital Marketing Company',
     description: 'Leading AI automation and digital marketing company in UK & Sri Lanka. Expert web design, branding, AI automation & digital marketing.',
-    images: ['https://arcai.agency/shareimage-1200x630.png'],
+    images: {
+      url: 'https://arcai.agency/shareimage-1200x630.png',
+      alt: 'ARC AI - AI Automation and Digital Marketing Company',
+    },
     creator: '@arcdigitalcanvas',
     site: '@arcdigitalcanvas',
   },
@@ -133,6 +139,14 @@ export default function RootLayout({
         {/* Critical Meta Tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        
+        {/* Explicit Open Graph tags for WhatsApp */}
+        <meta property="og:image" content="https://arcai.agency/shareimage-1200x630.png" />
+        <meta property="og:image:secure_url" content="https://arcai.agency/shareimage-1200x630.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="ARC AI - AI Automation and Digital Marketing Company" />
         
         {/* DNS Prefetch & Preconnect - Reduce request latency */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
