@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 const Navbar = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState<Date | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -17,8 +17,12 @@ const Navbar = memo(() => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Update time every minute
+  // Initialize and update time every minute (client-side only)
   useEffect(() => {
+    // Set initial time
+    setCurrentTime(new Date());
+    
+    // Update time every minute
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 60000); // Update every minute
@@ -28,6 +32,7 @@ const Navbar = memo(() => {
 
   // Memoize time formatting to avoid unnecessary recalculations
   const formatTime = useMemo(() => {
+    if (!currentTime) return '--:-- --';
     return currentTime.toLocaleTimeString('en-US', {
       hour: 'numeric',
       minute: '2-digit',
@@ -37,6 +42,7 @@ const Navbar = memo(() => {
 
   // Memoize timezone
   const timezone = useMemo(() => {
+    if (!currentTime) return '(GMT+0)';
     const offset = -currentTime.getTimezoneOffset() / 60;
     const sign = offset >= 0 ? '+' : '';
     return `(GMT${sign}${offset})`;
@@ -44,6 +50,7 @@ const Navbar = memo(() => {
 
   // Memoize availability date
   const availabilityDate = useMemo(() => {
+    if (!currentTime) return 'LOADING...';
     const monthYear = currentTime.toLocaleDateString('en-US', {
       month: 'short',
       year: 'numeric'
