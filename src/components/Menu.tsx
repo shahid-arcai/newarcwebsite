@@ -83,7 +83,11 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
 
               {/* Services Link */}
               <a
-                href="#"
+                href="/services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation('/services');
+                }}
                 className="group block py-6 border-b border-[rgb(88,88,88)] hover:border-[rgb(255,73,37)] transition-all duration-300"
                 style={{ animationDelay: "0.3s" }}
               >
@@ -113,6 +117,24 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 </div>
               </a>
 
+              {/* Blog Link */}
+              <a
+                href="/blog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation('/blog');
+                }}
+                className="group block py-6 border-b border-[rgb(88,88,88)] hover:border-[rgb(255,73,37)] transition-all duration-300"
+                style={{ animationDelay: "0.5s" }}
+              >
+                <div className="flex items-center justify-between">
+                  <h3 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[rgb(202,202,202)] group-hover:text-white transition-colors uppercase">
+                    Blog
+                  </h3>
+                  <div className="h-px flex-1 ml-8 bg-[rgb(255,73,37)] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+              </a>
+
               {/* Contact Link */}
               <a
                 href="/contact"
@@ -121,7 +143,7 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                   handleNavigation('/contact');
                 }}
                 className="group block py-6 border-b border-[rgb(88,88,88)] hover:border-[rgb(255,73,37)] transition-all duration-300"
-                style={{ animationDelay: "0.5s" }}
+                style={{ animationDelay: "0.6s" }}
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[rgb(202,202,202)] group-hover:text-white transition-colors uppercase">
@@ -142,12 +164,12 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
               </p>
               <h3 className="text-2xl lg:text-3xl font-medium">
                 <a
-                  href="mailto:hello@nakula.com"
+                  href="mailto:arc.ai.agencylk@gmail.com"
                   className="text-[rgb(255,73,37)] hover:text-[rgb(255,93,57)] transition-colors"
                   target="_blank"
                   rel="noopener"
                 >
-                  hello@nakula.com
+                  arc.ai.agencylk@gmail.com
                 </a>
               </h3>
             </div>
@@ -161,7 +183,7 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 {/* Left Column */}
                 <div className="space-y-3">
                   <a
-                    href="https://x.com"
+                    href="https://x.com/arc_ai_agency"
                     target="_blank"
                     rel="noopener"
                     className="group block"
@@ -174,7 +196,7 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                     </div>
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/arcai_agency/"
                     target="_blank"
                     rel="noopener"
                     className="group block"
@@ -191,7 +213,7 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 {/* Right Column */}
                 <div className="space-y-3">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/105845719"
                     target="_blank"
                     rel="noopener"
                     className="group block"
@@ -204,14 +226,14 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                     </div>
                   </a>
                   <a
-                    href="https://behance.net"
+                    href="https://www.facebook.com/ARCAI.lk"
                     target="_blank"
                     rel="noopener"
                     className="group block"
                   >
                     <div className="flex items-center gap-2">
                       <p className="text-base lg:text-lg text-[rgb(202,202,202)] group-hover:text-white transition-colors">
-                        Behance
+                        Facebook
                       </p>
                       <div className="h-px flex-1 bg-[rgb(255,73,37)] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>

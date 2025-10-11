@@ -73,10 +73,8 @@ const Services: React.FC = () => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
     }
-    // Set a delay before opening
-    hoverTimeoutRef.current = setTimeout(() => {
-      setHoveredIndex(index);
-    }, 200); // 200ms delay
+    // Immediately switch to the new item for smooth transitions
+    setHoveredIndex(index);
   };
 
   const handleMouseLeave = () => {
@@ -159,55 +157,54 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter
       className="relative cursor-pointer transition-all duration-500 mx-auto max-w-7xl md:!px-8 md:!py-12"
       style={{
         backgroundColor: isOpen ? "rgb(24, 24, 24)" : "transparent",
+        minHeight: "120px", // Fixed minimum height to prevent layout shifts
       }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       data-highlight="true"
       initial={false}
       animate={{
-        paddingTop: isOpen ? "24px" : "24px",
-        paddingBottom: isOpen ? "24px" : "24px",
+        paddingTop: "24px",
+        paddingBottom: "24px",
         paddingLeft: "16px",
         paddingRight: "16px",
       }}
       transition={{
-        duration: 0.8,
+        duration: 0.5, // Faster transition for smoother feel
         ease: [0.22, 1, 0.36, 1],
       }}
     >
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-12 md:gap-8">
         {/* Number */}
-        <div className="flex items-start gap-0 flex-shrink-0" data-framer-name="Number">
+        <div className="flex items-start gap-0 flex-shrink-0" data-framer-name="Number" style={{ width: "80px" }}>
           <motion.h3
-            className="font-bold text-[2rem] md:text-[2.5rem]"
+            className="font-bold"
             initial={false}
             animate={{
               color: isOpen ? "rgb(85, 85, 85)" : "rgb(85, 85, 85)",
-              fontSize: isOpen ? "2.5rem" : "2rem", // Smaller on mobile: 40px to 32px, desktop stays 40px
             }}
             transition={{ 
-              duration: 0.8,
+              duration: 0.5,
               ease: [0.22, 1, 0.36, 1],
             }}
             style={{
-              fontSize: isOpen ? "clamp(2rem, 4vw, 3.75rem)" : "clamp(2rem, 4vw, 2.5rem)",
+              fontSize: "clamp(2rem, 4vw, 2.5rem)",
             }}
           >
             {service.number}
           </motion.h3>
           <motion.h3
-            className="font-bold text-[2rem] md:text-[2.5rem]"
+            className="font-bold"
             initial={false}
             animate={{
               color: "rgb(255, 73, 37)",
-              fontSize: isOpen ? "2.5rem" : "2rem", // Smaller on mobile: 40px to 32px, desktop stays 40px
             }}
             transition={{ 
-              duration: 0.8,
+              duration: 0.5,
               ease: [0.22, 1, 0.36, 1],
             }}
             style={{
-              fontSize: isOpen ? "clamp(2rem, 4vw, 3.75rem)" : "clamp(2rem, 4vw, 2.5rem)",
+              fontSize: "clamp(2rem, 4vw, 2.5rem)",
             }}
           >
             .
@@ -224,9 +221,10 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter
             animate={{
               width: isOpen ? "auto" : "0px",
               opacity: isOpen ? 1 : 0,
+              marginRight: isOpen ? "48px" : "0px",
             }}
             transition={{
-              duration: 0.7,
+              duration: 0.4,
               ease: [0.22, 1, 0.36, 1],
             }}
             style={{
@@ -239,12 +237,12 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter
               initial={false}
               animate={{
                 opacity: isOpen ? 1 : 0,
-                scale: isOpen ? 1 : 0.2,
+                scale: isOpen ? 1 : 0.95,
               }}
               transition={{
-                duration: 0.7,
+                duration: 0.4,
                 ease: [0.22, 1, 0.36, 1],
-                delay: isOpen ? 0.1 : 0,
+                delay: isOpen ? 0.05 : 0,
               }}
             >
               <img
@@ -265,12 +263,12 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter
               animate={{
                 opacity: isOpen ? 1 : 0,
                 height: isOpen ? "auto" : "0px",
-                overflow: isOpen ? "visible" : "hidden",
+                overflow: "hidden",
               }}
               transition={{
-                duration: 0.6,
+                duration: 0.4,
                 ease: [0.22, 1, 0.36, 1],
-                delay: isOpen ? 0.15 : 0,
+                delay: isOpen ? 0.05 : 0,
               }}
               className="space-y-6"
             >
@@ -310,10 +308,10 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, isOpen, onMouseEnter
               initial={false}
               animate={{
                 opacity: isOpen ? 0 : 1,
-                y: isOpen ? -20 : 0,
+                y: 0,
               }}
               transition={{
-                duration: 0.5,
+                duration: 0.3,
                 ease: [0.22, 1, 0.36, 1],
               }}
               style={{

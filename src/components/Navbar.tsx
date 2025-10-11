@@ -48,7 +48,7 @@ const Navbar = memo(() => {
       month: 'short',
       year: 'numeric'
     }).toUpperCase();
-    return `EARLY ${monthYear}`;
+    return monthYear;
   }, [currentTime]);
 
   return (

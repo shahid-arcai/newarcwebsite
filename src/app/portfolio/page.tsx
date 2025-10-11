@@ -1,67 +1,47 @@
-"use client";
-
-import { useState, useEffect } from "react";
+// Server Component - Optimized for SEO
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import CTA from "@/components/CTA";
+import SchemaOrg from "@/components/SchemaOrg";
+import PortfolioHero from "@/components/PortfolioHero";
+import ScrollToTop from "@/components/ScrollToTop";
 
-const Portfolio = () => {
-  const [mounted, setMounted] = useState(false);
-  const [typedText, setTypedText] = useState("");
-  const [showProjects, setShowProjects] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+// SEO Metadata for Portfolio Page
+export const metadata: Metadata = {
+  title: "Portfolio - Our Best Work | ARC Digital Canvas",
+  description: "Explore ARC Digital Canvas portfolio of successful web design, AI automation, branding, and digital marketing projects for clients in UK and Sri Lanka. See our proven results.",
+  keywords: [
+    "portfolio", "web design portfolio", "AI automation case studies",
+    "digital marketing projects", "branding work", "client success stories",
+    "web development examples", "AI chatbot projects", "design showcase",
+    "UK web design portfolio", "Sri Lanka digital agency work"
+  ],
+  openGraph: {
+    title: "Portfolio - Our Best Work | ARC Digital Canvas",
+    description: "Explore our portfolio of successful web design, AI automation, and digital marketing projects with proven results.",
+    url: "https://arcai.agency/portfolio",
+    type: "website",
+    images: [{
+      url: "https://arcai.agency/logo.png",
+      width: 1200,
+      height: 630,
+      alt: "ARC Digital Canvas Portfolio"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio - Our Best Work | ARC Digital Canvas",
+    description: "Explore our portfolio of successful projects",
+    images: ["https://arcai.agency/logo.png"]
+  },
+  alternates: {
+    canonical: "https://arcai.agency/portfolio"
+  }
+};
 
-  useEffect(() => {
-    setMounted(true);
-    window.scrollTo(0, 0);
-  }, []);
-
-  // Typing and deleting animation effect
-  useEffect(() => {
-    if (!mounted) return;
-
-    const texts = ["OUR PORTFOLIO", "OUR BEST WORK"];
-    const currentFullText = texts[currentTextIndex];
-    let timeout: NodeJS.Timeout;
-
-    const handleTyping = () => {
-      if (!isDeleting) {
-        // Typing forward
-        if (typedText.length < currentFullText.length) {
-          setTypedText(currentFullText.slice(0, typedText.length + 1));
-          timeout = setTimeout(handleTyping, 100); // Typing speed
-        } else {
-          // Finished typing, show projects on first completion
-          if (!showProjects) {
-            setShowProjects(true);
-          }
-          
-          // Wait before starting to delete
-          const waitTime = currentTextIndex === 0 ? 3000 : 2000; // 3s for Portfolio, 2s for Best Work
-          timeout = setTimeout(() => {
-            setIsDeleting(true);
-          }, waitTime);
-        }
-      } else {
-        // Deleting (backspace effect)
-        if (typedText.length > 0) {
-          setTypedText(typedText.slice(0, -1));
-          timeout = setTimeout(handleTyping, 50); // Faster deletion speed
-        } else {
-          // Finished deleting, switch to next text
-          setIsDeleting(false);
-          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-        }
-      }
-    };
-
-    timeout = setTimeout(handleTyping, isDeleting ? 50 : 100);
-
-    return () => clearTimeout(timeout);
-  }, [mounted, typedText, isDeleting, currentTextIndex, showProjects]);
+export default function Portfolio() {
 
   const portfolioItems = [
     {
@@ -230,31 +210,18 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <ScrollToTop />
+      <SchemaOrg 
+        type="portfolio" 
+        pageTitle="Portfolio"
+        pageDescription="Explore ARC Digital Canvas portfolio of successful web design, AI automation, branding, and digital marketing projects."
+        pageUrl="https://arcai.agency/portfolio"
+      />
       <Navbar />
       <FloatingActions />
 
-      {/* Hero Section */}
-      <section className="relative px-6 lg:px-12 pt-48 lg:pt-56 pb-16 lg:pb-20">
-        <div className="max-w-[1800px] w-full mx-auto">
-          <div
-            className={`transition-all duration-1000 ${
-              mounted
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <h1
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none tracking-tight mb-12 lg:mb-16 uppercase"
-              style={{
-                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-              }}
-            >
-              {typedText}
-              <span className="inline-block w-[3px] h-[0.9em] bg-white ml-1 animate-cursor-blink align-middle"></span>
-            </h1>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Animation */}
+      <PortfolioHero />
 
       {/* Portfolio Grid */}
       <section className="relative px-6 lg:px-12 pb-32">
@@ -266,13 +233,9 @@ const Portfolio = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group cursor-pointer transition-all duration-700 ${
-                  showProjects
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
+                className="group cursor-pointer transition-all duration-700 opacity-100 translate-y-0"
                 style={{
-                  transitionDelay: showProjects ? `${index * 150}ms` : "0ms",
+                  transitionDelay: `${index * 150}ms`,
                 }}
               >
                 {/* Image Container */}
@@ -370,7 +333,5 @@ const Portfolio = () => {
       <Footer />
     </div>
   );
-};
-
-export default Portfolio;
+}
 

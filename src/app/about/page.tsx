@@ -1,17 +1,53 @@
-"use client";
-
-import { useEffect } from "react";
+// Server Component - Optimized for SEO
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SchemaOrg from "@/components/SchemaOrg";
+import ScrollToTop from "@/components/ScrollToTop";
 import { Rocket, Users, MapPin } from "lucide-react";
 
-const About = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+// SEO Metadata for About Page
+export const metadata: Metadata = {
+  title: "About Us - AI Digital Agency | ARC Digital Canvas",
+  description: "Learn about ARC Digital Canvas - a leading AI-powered digital agency serving UK and Sri Lanka. Discover our mission, values, and expertise in web design, AI automation, and digital marketing.",
+  keywords: [
+    "about ARC Digital Canvas", "AI digital agency UK", "digital agency Sri Lanka",
+    "web design company", "AI automation experts", "digital marketing agency",
+    "branding agency", "our story", "company values", "digital transformation"
+  ],
+  openGraph: {
+    title: "About ARC Digital Canvas - AI Digital Agency",
+    description: "Leading AI-powered digital agency serving UK and Sri Lanka with expertise in web design, AI automation, and digital marketing.",
+    url: "https://arcai.agency/about",
+    type: "website",
+    images: [{
+      url: "https://arcai.agency/logo.png",
+      width: 1200,
+      height: 630,
+      alt: "About ARC Digital Canvas"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About ARC Digital Canvas - AI Digital Agency",
+    description: "Leading AI-powered digital agency serving UK and Sri Lanka",
+    images: ["https://arcai.agency/logo.png"]
+  },
+  alternates: {
+    canonical: "https://arcai.agency/about"
+  }
+};
 
+export default function About() {
   return (
     <div className="min-h-screen bg-black">
+      <ScrollToTop />
+      <SchemaOrg 
+        type="about" 
+        pageTitle="About Us"
+        pageDescription="Leading AI-powered digital agency serving UK and Sri Lanka with expertise in web design, AI automation, and digital marketing."
+        pageUrl="https://arcai.agency/about"
+      />
       <Navbar />
       
       {/* Company Hero Section */}
@@ -327,7 +363,5 @@ const About = () => {
       <Footer />
     </div>
   );
-};
-
-export default About;
+}
 

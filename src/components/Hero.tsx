@@ -198,10 +198,10 @@ const Hero = memo(() => {
             {/* CTA Button - Full Width */}
             <div className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
               <button 
-                className="group relative w-full px-8 py-4 rounded-full border-2 border-primary hover:bg-primary transition-all duration-300 overflow-hidden"
+                className="group relative w-full px-8 py-4 rounded-full border-2 border-orange-500 hover:bg-orange-500 transition-all duration-300 overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)]"
                 aria-label="Start a project with ARC AI"
               >
-                <span className="relative z-10 flex items-center justify-center gap-3 text-base font-bold tracking-wide text-primary group-hover:text-white transition-colors">
+                <span className="relative z-10 flex items-center justify-center gap-3 text-base font-bold tracking-wide text-orange-500 group-hover:text-white transition-colors">
                   START A PROJECT
                   <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </span>
@@ -263,10 +263,10 @@ const Hero = memo(() => {
               {/* CTA Button - Under Trusted By */}
               <div className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
                 <button 
-                  className="group relative px-8 md:px-12 py-3 md:py-4 rounded-full border-2 border-primary hover:bg-primary transition-all duration-300 overflow-hidden shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
+                  className="group relative px-8 md:px-12 py-3 md:py-4 rounded-full border-2 border-orange-500 hover:bg-orange-500 transition-all duration-300 overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)]"
                   aria-label="Start a project with ARC AI"
                 >
-                  <span className="relative z-10 flex items-center gap-3 text-sm md:text-base font-semibold tracking-wide text-primary group-hover:text-white transition-colors">
+                  <span className="relative z-10 flex items-center gap-3 text-sm md:text-base font-semibold tracking-wide text-orange-500 group-hover:text-white transition-colors">
                     START A PROJECT
                     <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                   </span>
@@ -333,10 +333,10 @@ const Hero = memo(() => {
             {/* CTA Button - Bottom Right */}
             <div className="flex justify-end mt-auto animate-fade-in" style={{ animationDelay: "0.6s" }}>
               <button 
-                className="group relative px-8 py-4 rounded-full border-2 border-primary hover:bg-primary transition-all duration-300 overflow-hidden"
+                className="group relative px-8 py-4 rounded-full border-2 border-orange-500 hover:bg-orange-500 transition-all duration-300 overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)]"
                 aria-label="Start a project with ARC AI"
               >
-                <span className="relative z-10 flex items-center gap-3 text-sm font-semibold tracking-wide text-primary group-hover:text-white transition-colors">
+                <span className="relative z-10 flex items-center gap-3 text-sm font-semibold tracking-wide text-orange-500 group-hover:text-white transition-colors">
                   START A PROJECT
                   <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </span>

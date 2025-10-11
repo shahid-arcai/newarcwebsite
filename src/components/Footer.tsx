@@ -42,10 +42,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { label: "X/Twitter", href: "https://x.com/VeloxThemes" },
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/velox-themes/" },
-    { label: "Facebook", href: "https://facebook.com" },
+    { label: "X/Twitter", href: "https://x.com/arc_ai_agency" },
+    { label: "Instagram", href: "https://www.instagram.com/arcai_agency/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/105845719" },
+    { label: "Facebook", href: "https://www.facebook.com/ARCAI.lk" },
   ];
 
   return (

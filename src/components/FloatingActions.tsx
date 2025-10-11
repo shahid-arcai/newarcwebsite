@@ -152,7 +152,7 @@ const FloatingActions = () => {
               <div className="w-full h-full">
                 <div
                   className="calendly-inline-widget w-full h-full"
-                  data-url="https://calendly.com/your-calendly-username?hide_event_type_details=1&hide_gdpr_banner=1"
+                  data-url="https://calendly.com/shahid-arcai-_xeu/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                   style={{ minWidth: '320px', height: '100%' }}
                 />
               </div>
