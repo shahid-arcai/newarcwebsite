@@ -30,7 +30,7 @@ export default function SchemaOrg({
   blogImage,
   blogDatePublished,
   blogDateModified,
-  blogAuthor = 'ARC Digital Canvas',
+  blogAuthor = 'ARC AI',
 }: SchemaOrgProps) {
   
   // Organization Schema (appears on all pages)
@@ -38,7 +38,7 @@ export default function SchemaOrg({
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": "https://arcai.agency/#organization",
-    "name": "ARC Digital Canvas",
+    "name": "ARC AI",
     "alternateName": "ARC AI Agency",
     "url": "https://arcai.agency",
     "logo": {
@@ -116,7 +116,7 @@ export default function SchemaOrg({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://arcai.agency/#localbusiness-uk",
-    "name": "ARC Digital Canvas - UK",
+    "name": "ARC AI - UK",
     "alternateName": "ARC AI Agency UK",
     "url": "https://arcai.agency",
     "logo": {
@@ -173,7 +173,7 @@ export default function SchemaOrg({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://arcai.agency/#localbusiness-sl",
-    "name": "ARC Digital Canvas - Sri Lanka",
+    "name": "ARC AI - Sri Lanka",
     "alternateName": "ARC AI Agency Sri Lanka",
     "url": "https://arcai.agency",
     "logo": {
@@ -231,7 +231,7 @@ export default function SchemaOrg({
     "@type": "WebSite",
     "@id": "https://arcai.agency/#website",
     "url": "https://arcai.agency",
-    "name": "ARC Digital Canvas",
+    "name": "ARC AI",
     "description": "Leading AI-powered digital agency in UK & Sri Lanka",
     "publisher": {
       "@id": "https://arcai.agency/#organization"

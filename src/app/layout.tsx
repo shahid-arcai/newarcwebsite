@@ -19,10 +19,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://arcai.agency'),
   title: {
-    default: "ARC Digital Canvas - AI Web Design & Digital Marketing Agency UK | Sri Lanka",
-    template: "%s | ARC Digital Canvas"
+    default: "ARC AI - AI Automation and Digital Marketing Company UK | Sri Lanka",
+    template: "%s | ARC AI"
   },
-  description: "Leading AI-powered digital agency in UK & Sri Lanka. Expert web design, branding, AI automation, chatbots, content generation & digital marketing services. Transform your business with cutting-edge technology.",
+  description: "Leading AI automation and digital marketing company in UK & Sri Lanka. Expert web design, branding, AI automation, chatbots, content generation & digital marketing services. Transform your business with cutting-edge technology.",
   keywords: [
     // UK Market Keywords
     "AI digital agency UK", "web design agency London", "AI automation UK", "digital marketing UK",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     "custom web design", "brand identity design", "digital experience design",
     "motion design", "social media marketing", "SEO optimization"
   ],
-  authors: [{ name: "ARC Digital Canvas", url: "https://arcai.agency" }],
-  creator: "ARC Digital Canvas",
-  publisher: "ARC Digital Canvas",
+  authors: [{ name: "ARC AI", url: "https://arcai.agency" }],
+  creator: "ARC AI",
+  publisher: "ARC AI",
   robots: {
     index: true,
     follow: true,
@@ -64,37 +64,37 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     alternateLocale: ['en_LK'],
     url: 'https://arcai.agency',
-    siteName: 'ARC Digital Canvas',
-    title: 'ARC Digital Canvas - AI Web Design & Digital Marketing Agency UK | Sri Lanka',
-    description: 'Leading AI-powered digital agency in UK & Sri Lanka. Expert web design, branding, AI automation, chatbots, content generation & digital marketing services.',
+    siteName: 'ARC AI',
+    title: 'ARC AI - AI Automation and Digital Marketing Company UK | Sri Lanka',
+    description: 'Leading AI automation and digital marketing company in UK & Sri Lanka. Expert web design, branding, AI automation, chatbots, content generation & digital marketing services.',
     images: [
       {
         url: 'https://arcai.agency/shareimage-1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'ARC Digital Canvas - AI Digital Agency',
+        alt: 'ARC AI - AI Automation and Digital Marketing Company',
         type: 'image/png',
       },
       {
         url: 'https://arcai.agency/shareimage-1200x627.png',
         width: 1200,
         height: 627,
-        alt: 'ARC Digital Canvas - AI Digital Agency',
+        alt: 'ARC AI - AI Automation and Digital Marketing Company',
         type: 'image/png',
       },
       {
         url: 'https://arcai.agency/shareimage-800x418.png',
         width: 800,
         height: 418,
-        alt: 'ARC Digital Canvas - AI Digital Agency',
+        alt: 'ARC AI - AI Automation and Digital Marketing Company',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ARC Digital Canvas - AI Web Design & Digital Marketing Agency',
-    description: 'Leading AI-powered digital agency in UK & Sri Lanka. Expert web design, branding, AI automation & digital marketing.',
+    title: 'ARC AI - AI Automation and Digital Marketing Company',
+    description: 'Leading AI automation and digital marketing company in UK & Sri Lanka. Expert web design, branding, AI automation & digital marketing.',
     images: ['https://arcai.agency/shareimage-1200x630.png'],
     creator: '@arcdigitalcanvas',
     site: '@arcdigitalcanvas',
