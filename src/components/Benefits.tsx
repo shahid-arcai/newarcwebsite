@@ -59,7 +59,7 @@ const Benefits = () => {
                     <br />
                     Quantity, Always
                   </h3>
-                  <div className="absolute left-6 bottom-0 translate-y-[67%] w-16 md:w-20 select-none pointer-events-none">
+                  <div className="absolute left-6 bottom-0 translate-y-[73%] md:translate-y-[67%] w-16 md:w-20 select-none pointer-events-none">
                     <img src="https://framerusercontent.com/images/XQgiis7gGdUPSeOOrtqD2Wy81Qg.png?width=207&height=1200"
                       alt="brush"
                       className="w-full h-auto object-cover"

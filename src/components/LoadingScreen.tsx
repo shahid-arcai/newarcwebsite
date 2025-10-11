@@ -16,14 +16,14 @@ const TypingText = memo(({ text }: { text: string }) => {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + text[currentIndex]);
         setCurrentIndex((prev) => prev + 1);
-      }, 50); // Very fast typing: 50ms per letter (22 chars × 50ms = 1.1s)
+      }, 60); // Faster typing: 60ms per letter (22 chars × 60ms = 1.32s)
 
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, text]);
 
   return (
-    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight text-center" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+    <h1 className="text-4xl md:text-6xl text-white tracking-tight text-center" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 700 }}>
       {displayedText}
       <motion.span
         animate={{ opacity: [1, 0] }}
@@ -42,7 +42,7 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading progress over 1.5 seconds (much faster for better LCP)
+    // Simulate loading progress over 3 seconds to match typing animation
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -50,9 +50,9 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
           setTimeout(onLoadComplete, 100); // Minimal delay
           return 100;
         }
-        return prev + 3; // Even faster progress updates
+        return prev + 2; // Progress updates for 3 second duration
       });
-    }, 45);
+    }, 60);
 
     return () => clearInterval(interval);
   }, [onLoadComplete]);

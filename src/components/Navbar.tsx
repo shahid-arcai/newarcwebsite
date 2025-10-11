@@ -62,6 +62,29 @@ const Navbar = memo(() => {
     <>
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       
+      {/* Mobile Status and Time - Non-sticky, positioned below navbar */}
+      <div className={`md:hidden absolute top-[106px] left-6 right-6 z-30 transition-all duration-300 ${isMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'}`}>
+        <div className="flex gap-6">
+          {/* Status and Date */}
+          <div className="text-left space-y-1">
+            <div className="flex items-center gap-2">
+              <div className="relative w-2 h-2" aria-hidden="true">
+                <div className="absolute w-2 h-2 rounded-full bg-green-500 animate-ping opacity-75"></div>
+                <div className="relative w-2 h-2 rounded-full bg-green-500"></div>
+              </div>
+              <span className="text-sm font-medium text-white">Available for project</span>
+            </div>
+            <div className="text-[10px] text-white/60 pl-4">{availabilityDate}</div>
+          </div>
+
+          {/* Time */}
+          <div className="text-left space-y-1">
+            <time className="text-sm font-medium text-white">{formatTime}</time>
+            <div className="text-[10px] text-white/60">{timezone}</div>
+          </div>
+        </div>
+      </div>
+
       {/* Hamburger/Close Button - Always on top */}
       <div className="fixed top-6 right-6 lg:right-12 z-[60] transition-all duration-500">
         <button 
@@ -128,27 +151,6 @@ const Navbar = memo(() => {
               >
                 LET'S TALK
               </button>
-            </div>
-          </div>
-
-          {/* Bottom Row - Status and Time under logo */}
-          <div className={`flex gap-6 mt-3 transition-all duration-300 ${isMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'}`}>
-            {/* Status and Date */}
-            <div className="text-left space-y-1">
-              <div className="flex items-center gap-2">
-                <div className="relative w-2 h-2" aria-hidden="true">
-                  <div className="absolute w-2 h-2 rounded-full bg-green-500 animate-ping opacity-75"></div>
-                  <div className="relative w-2 h-2 rounded-full bg-green-500"></div>
-                </div>
-                <span className="text-sm font-medium text-white">Available for project</span>
-              </div>
-              <div className="text-[10px] text-white/60 pl-4">{availabilityDate}</div>
-            </div>
-
-            {/* Time */}
-            <div className="text-left space-y-1">
-              <time className="text-sm font-medium text-white">{formatTime}</time>
-              <div className="text-[10px] text-white/60">{timezone}</div>
             </div>
           </div>
         </div>
