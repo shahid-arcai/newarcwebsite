@@ -26,11 +26,54 @@ export default function ContactForm() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    // You can add your form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch(
+        "https://hook.eu2.make.com/7dnl4byhd8yxuet88sa42iijvsauxeet",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Failed to send message. Please try again.",
+      });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -109,6 +152,19 @@ export default function ContactForm() {
         />
       </div>
 
+      {/* Status Message */}
+      {submitStatus.type && (
+        <div
+          className={`p-4 rounded-xl ${
+            submitStatus.type === "success"
+              ? "bg-green-500/10 border border-green-500/20 text-green-500"
+              : "bg-red-500/10 border border-red-500/20 text-red-500"
+          }`}
+        >
+          {submitStatus.message}
+        </div>
+      )}
+
       {/* Submit Section */}
       <div className="space-y-6 pt-2">
         <div className="flex flex-col md:flex-row items-start md:justify-between gap-6">
@@ -118,9 +174,10 @@ export default function ContactForm() {
 
           <Button
             type="submit"
-            className="h-14 px-10 bg-transparent hover:bg-[rgb(255,73,37)] text-[rgb(255,73,37)] hover:text-[rgb(10,10,10)] font-bold uppercase tracking-wider rounded-full border-2 border-[rgb(255,73,37)] transition-all duration-300 flex items-center gap-2 whitespace-nowrap w-full md:w-auto order-1 md:order-2"
+            disabled={isSubmitting}
+            className="h-14 px-10 bg-transparent hover:bg-[rgb(255,73,37)] text-[rgb(255,73,37)] hover:text-[rgb(10,10,10)] font-bold uppercase tracking-wider rounded-full border-2 border-[rgb(255,73,37)] transition-all duration-300 flex items-center gap-2 whitespace-nowrap w-full md:w-auto order-1 md:order-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            SUBMIT
+            {isSubmitting ? "SENDING..." : "SUBMIT"}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-[-45deg]">
               <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
