@@ -11,6 +11,8 @@ const nextConfig = {
   trailingSlash: false,
   // Disable x-powered-by header
   poweredByHeader: false,
+  // Output file tracing root
+  outputFileTracingRoot: process.cwd(),
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
@@ -32,19 +34,15 @@ const nextConfig = {
   },
   // React strict mode for better performance
   reactStrictMode: true,
-  // SWC minification for faster builds
-  swcMinify: true,
   // Exclude old Vite files from build
   eslint: {
     ignoreDuringBuilds: false,
-    dirs: ['src/app', 'src/components', 'src/lib', 'src/hooks'],
   },
   typescript: {
     ignoreBuildErrors: false,
   },
   // Experimental features for better performance
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['framer-motion', 'lucide-react', '@radix-ui/react-icons'],
   },
 }
