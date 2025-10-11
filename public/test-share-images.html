@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Share Images</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arcai.agency/">
+    <meta property="og:title" content="ARC Digital Canvas - AI Digital Agency">
+    <meta property="og:description" content="Leading AI-powered digital agency in UK & Sri Lanka">
+    <meta property="og:image" content="https://arcai.agency/shareimage-1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arcai.agency/">
+    <meta property="twitter:title" content="ARC Digital Canvas - AI Digital Agency">
+    <meta property="twitter:description" content="Leading AI-powered digital agency in UK & Sri Lanka">
+    <meta property="twitter:image" content="https://arcai.agency/shareimage-1200x630.png">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #333; }
+        .image-test {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Share Image Test Page</h1>
+    <p>Testing if share images are loading correctly...</p>
+    
+    <div class="image-test">
+        <h3>Main Share Image (1200x630)</h3>
+        <img src="/shareimage-1200x630.png" alt="Share Image 1200x630" onload="this.nextElementSibling.innerHTML='✓ Image loaded successfully'" onerror="this.nextElementSibling.innerHTML='✗ Image failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <div class="image-test">
+        <h3>Alternative (1200x627)</h3>
+        <img src="/shareimage-1200x627.png" alt="Share Image 1200x627" onload="this.nextElementSibling.innerHTML='✓ Image loaded successfully'" onerror="this.nextElementSibling.innerHTML='✗ Image failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <div class="image-test">
+        <h3>Twitter Optimized (800x418)</h3>
+        <img src="/shareimage-800x418.png" alt="Share Image 800x418" onload="this.nextElementSibling.innerHTML='✓ Image loaded successfully'" onerror="this.nextElementSibling.innerHTML='✗ Image failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <div class="image-test">
+        <h3>Original shareimage.png</h3>
+        <img src="/shareimage.png" alt="Original Share Image" onload="this.nextElementSibling.innerHTML='✓ Image loaded successfully'" onerror="this.nextElementSibling.innerHTML='✗ Image failed to load'">
+        <p class="status">Loading...</p>
+    </div>
+    
+    <hr>
+    <h2>Testing Instructions:</h2>
+    <ol>
+        <li>Verify all images load above</li>
+        <li>Test the link in Facebook Sharing Debugger: <a href="https://developers.facebook.com/tools/debug/" target="_blank">https://developers.facebook.com/tools/debug/</a></li>
+        <li>Test the link in Twitter Card Validator: <a href="https://cards-dev.twitter.com/validator" target="_blank">https://cards-dev.twitter.com/validator</a></li>
+        <li>Test the link in LinkedIn Post Inspector: <a href="https://www.linkedin.com/post-inspector/" target="_blank">https://www.linkedin.com/post-inspector/</a></li>
+    </ol>
+</body>
+</html>
