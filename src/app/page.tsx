@@ -1,5 +1,4 @@
 // Server Component - Optimized for SEO
-import { Suspense, lazy } from "react";
 import { Metadata } from "next";
 import dynamic from 'next/dynamic';
 import Navbar from "@/components/Navbar";
@@ -17,10 +16,9 @@ const Integrations = dynamic(() => import("@/components/Integrations"), { ssr: t
 const Process = dynamic(() => import("@/components/Process"), { ssr: true });
 const CTA = dynamic(() => import("@/components/CTA"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
-const FloatingActions = dynamic(() => import("@/components/FloatingActions"), { 
-  ssr: false, // No SSR needed for floating actions
-  loading: () => null 
-});
+
+// Client-only component - imported separately
+import FloatingActions from "@/components/FloatingActions";
 
 // SEO Metadata for Homepage
 export const metadata: Metadata = {
