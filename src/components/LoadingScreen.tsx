@@ -63,22 +63,22 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
         style={{ willChange: 'opacity' }}
       >
         {/* Static Gradient Background - Removed heavy animation for performance */}
         <div
           className="absolute inset-0"
           style={{
-            background: "radial-gradient(circle at 30% 40%, rgba(249, 115, 22, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(251, 146, 60, 0.1) 0%, transparent 50%)",
+            background: "radial-gradient(circle at 30% 40%, rgba(249, 115, 22, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(251, 146, 60, 0.05) 0%, transparent 50%)",
           }}
         />
 
         {/* Single Optimized Orb - Minimal animations for performance */}
         <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-15 blur-xl"
+          className="absolute w-[400px] h-[400px] rounded-full opacity-10 blur-xl"
           style={{
-            background: "radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, transparent 70%)",
             willChange: 'transform',
             left: '50%',
             top: '50%',
@@ -96,7 +96,7 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
 
         {/* Optimized Geometric Shapes */}
         <motion.div
-          className="absolute w-32 h-32 border border-orange-500/20"
+          className="absolute w-32 h-32 border border-orange-500/10"
           style={{ left: "10%", top: "20%", willChange: 'transform' }}
           animate={{
             rotate: 360,
@@ -108,7 +108,7 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
           }}
         />
         <motion.div
-          className="absolute w-24 h-24 border border-orange-400/20"
+          className="absolute w-24 h-24 border border-orange-400/10"
           style={{ right: "15%", bottom: "25%", willChange: 'transform' }}
           animate={{
             rotate: 360,
