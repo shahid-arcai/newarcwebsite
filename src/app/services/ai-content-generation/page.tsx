@@ -151,7 +151,7 @@ export default function AIContentGenerationPage() {
                 items: ["YouTube scripts", "Ads", "Explainers", "Social videos"]
               },
               {
-                icon: <Image className="w-8 h-8" />,
+                icon: <Image className="w-8 h-8" aria-hidden="true" />,
                 title: "Ad Copy",
                 items: ["Google Ads", "Facebook Ads", "Headlines", "Descriptions"]
               },
