@@ -64,13 +64,7 @@ export default function PortfolioHero() {
   return (
     <section className="relative min-h-[50vh] w-full flex items-center justify-center px-6 pt-48 pb-20 bg-black">
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-center mb-6">
-          <p className="text-xs font-medium text-[rgb(119,119,119)] uppercase tracking-wider">
-            (PORTFOLIO)
-          </p>
-        </div>
-
-        <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white uppercase leading-none tracking-tight mb-6">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white uppercase leading-none tracking-tight mb-6 min-h-[1.2em]">
           {mounted ? (
             <>
               {typedText}
