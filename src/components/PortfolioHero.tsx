@@ -64,16 +64,20 @@ export default function PortfolioHero() {
   return (
     <section className="relative min-h-[50vh] w-full flex items-center justify-center px-6 pt-48 pb-20 bg-black">
       <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white uppercase leading-none tracking-tight mb-6 min-h-[1.2em]">
-          {mounted ? (
-            <>
-              {typedText}
-              <span className={`inline-block w-1 h-[0.8em] bg-white ml-2 align-middle ${showCursor ? "opacity-100" : "opacity-0"}`} />
-            </>
-          ) : (
-            "OUR PORTFOLIO"
-          )}
-        </h1>
+        <div className="flex justify-center items-center mb-6">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white uppercase leading-none tracking-tight inline-flex items-center justify-center min-w-[90vw] md:min-w-0">
+            <span className="inline-block text-center">
+              {mounted ? (
+                <>
+                  {typedText}
+                  <span className={`inline-block w-1 h-[0.8em] bg-white ml-2 align-middle ${showCursor ? "opacity-100" : "opacity-0"}`} />
+                </>
+              ) : (
+                "OUR PORTFOLIO"
+              )}
+            </span>
+          </h1>
+        </div>
 
         <p className="text-base text-[rgb(119,119,119)] max-w-2xl mx-auto leading-relaxed">
           Explore our collection of successful projects across web design, branding, AI automation, and digital marketing.
