@@ -109,9 +109,9 @@ const Hero = memo(() => {
             playsInline
             loop
             muted
-            preload="auto"
+            preload="none"
             className="w-full h-full object-cover scale-100"
-            style={{ transformOrigin: 'center center' }}
+            style={{ transformOrigin: 'center center', willChange: 'auto' }}
             aria-hidden="true"
             onLoadedData={() => {
               console.log('Video loaded');

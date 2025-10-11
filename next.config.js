@@ -57,9 +57,17 @@ const nextConfig = {
     optimizePackageImports: ['framer-motion', 'lucide-react', '@radix-ui/react-icons'],
     // Reduce JavaScript payload
     serverComponentsExternalPackages: ['sharp'],
+    // Optimize CSS
+    optimizeCss: true,
+    // Optimize fonts
+    optimizeFonts: true,
   },
   // Additional performance optimizations
   compress: true,
+  // Generate static pages at build time
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
+  },
 }
 
 export default nextConfig

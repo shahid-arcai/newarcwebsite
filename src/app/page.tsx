@@ -6,16 +6,47 @@ import Hero from "@/components/Hero";
 import SchemaOrg from "@/components/SchemaOrg";
 
 // Dynamic imports for below-the-fold components (reduce initial bundle)
-const WhyUs = dynamic(() => import("@/components/WhyUs"), { ssr: true });
-const Benefits = dynamic(() => import("@/components/Benefits"), { ssr: true });
-const ClientsSection = dynamic(() => import("@/components/ClientsSection"), { ssr: true });
-const Services = dynamic(() => import("@/components/Services"), { ssr: true });
-const Features = dynamic(() => import("@/components/Features"), { ssr: true });
-const AIServices = dynamic(() => import("@/components/AIServices"), { ssr: true });
-const Integrations = dynamic(() => import("@/components/Integrations"), { ssr: true });
-const Process = dynamic(() => import("@/components/Process"), { ssr: true });
-const CTA = dynamic(() => import("@/components/CTA"), { ssr: true });
-const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
+// Using loading fallback to prevent layout shift
+const WhyUs = dynamic(() => import("@/components/WhyUs"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const Benefits = dynamic(() => import("@/components/Benefits"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const ClientsSection = dynamic(() => import("@/components/ClientsSection"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const Services = dynamic(() => import("@/components/Services"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const Features = dynamic(() => import("@/components/Features"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const AIServices = dynamic(() => import("@/components/AIServices"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const Integrations = dynamic(() => import("@/components/Integrations"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const Process = dynamic(() => import("@/components/Process"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const CTA = dynamic(() => import("@/components/CTA"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const Footer = dynamic(() => import("@/components/Footer"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
 
 // Client-only component - imported separately
 import FloatingActions from "@/components/FloatingActions";

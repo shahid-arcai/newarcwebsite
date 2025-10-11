@@ -9,8 +9,10 @@ import PerformanceMonitor from "@/components/PerformanceMonitor";
 
 const inter = Inter({ 
   subsets: ["latin"],
-  display: 'swap', // Optimize font loading
+  display: 'swap',
   preload: true,
+  adjustFontFallback: true,
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Arial', 'sans-serif'],
 });
 
 // Comprehensive SEO Metadata for UK and Sri Lankan markets
@@ -126,8 +128,8 @@ export default function RootLayout({
         
         {/* Preload Critical Resources - Reduce LCP */}
         <link rel="preload" as="image" href="/logo.png" type="image/png" fetchPriority="high" />
-        <link rel="preload" as="video" href="/herovideo.mp4" type="video/mp4" />
-        <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossOrigin="anonymous" />
+        {/* Remove video preload - let browser decide based on bandwidth */}
+        <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossOrigin="anonymous" fetchPriority="high" />
         
         {/* Minimal Favicons - Defer non-critical */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
