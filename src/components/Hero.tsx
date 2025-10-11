@@ -113,7 +113,6 @@ const Hero = memo(() => {
             className="w-full h-full object-cover scale-100"
             style={{ transformOrigin: 'center center' }}
             aria-hidden="true"
-            poster="/placeholder.svg"
             onLoadedData={() => {
               console.log('Video loaded');
               setVideoLoaded(true);

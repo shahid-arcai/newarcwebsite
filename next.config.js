@@ -55,7 +55,11 @@ const nextConfig = {
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react', '@radix-ui/react-icons'],
+    // Reduce JavaScript payload
+    serverComponentsExternalPackages: ['sharp'],
   },
+  // Additional performance optimizations
+  compress: true,
 }
 
 export default nextConfig

@@ -16,7 +16,7 @@ const TypingText = memo(({ text }: { text: string }) => {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + text[currentIndex]);
         setCurrentIndex((prev) => prev + 1);
-      }, 100); // Faster typing: 100ms per letter
+      }, 50); // Very fast typing: 50ms per letter (22 chars × 50ms = 1.1s)
 
       return () => clearTimeout(timeout);
     }
@@ -42,17 +42,17 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading progress over 2.5 seconds (faster)
+    // Simulate loading progress over 1.5 seconds (much faster for better LCP)
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(onLoadComplete, 200); // Shorter delay
+          setTimeout(onLoadComplete, 100); // Minimal delay
           return 100;
         }
-        return prev + 2; // Faster progress updates
+        return prev + 3; // Even faster progress updates
       });
-    }, 50);
+    }, 45);
 
     return () => clearInterval(interval);
   }, [onLoadComplete]);
@@ -74,42 +74,23 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
           }}
         />
 
-        {/* Optimized Floating Orbs - Reduced blur and simplified animations */}
+        {/* Single Optimized Orb - Minimal animations for performance */}
         <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-15 blur-2xl"
+          className="absolute w-[400px] h-[400px] rounded-full opacity-15 blur-xl"
           style={{
-            background: "radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%)",
             willChange: 'transform',
-            left: '20%',
-            top: '30%',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
           }}
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.15, 0.25, 0.15],
+            scale: [1, 1.1, 1],
           }}
           transition={{
-            duration: 8,
+            duration: 6,
             repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute w-[350px] h-[350px] rounded-full opacity-15 blur-2xl"
-          style={{
-            background: "radial-gradient(circle, rgba(234, 88, 12, 0.4) 0%, transparent 70%)",
-            willChange: 'transform',
-            right: '20%',
-            bottom: '30%',
-          }}
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.15, 0.22, 0.15],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5,
+            ease: "linear",
           }}
         />
 
