@@ -5,8 +5,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryProvider } from "@/components/providers/query-provider";
+import PerformanceMonitor from "@/components/PerformanceMonitor";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap', // Optimize font loading
+  preload: true,
+});
 
 // Comprehensive SEO Metadata for UK and Sri Lankan markets
 export const metadata: Metadata = {
@@ -109,24 +114,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        {/* Comprehensive Favicon Set for All Devices & Platforms */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
-        <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256x256.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+        {/* DNS Prefetch for faster external resource loading */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         
-        {/* Apple Touch Icons for iOS */}
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Preconnect to critical external domains - HIGH PRIORITY */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Critical Favicon - Load only essential ones first */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
-        {/* Android Chrome Icons */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+        {/* Preload critical images to reduce LCP */}
+        <link rel="preload" as="image" href="/logo.png" type="image/png" />
         
         {/* Web App Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
@@ -136,11 +138,18 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Viewport for responsive design with optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        
+        {/* Performance hints */}
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        
+        {/* Additional favicons loaded with lower priority */}
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" media="(min-width: 768px)" />
       </head>
       <body className={inter.className}>
+        <PerformanceMonitor />
         <QueryProvider>
           <TooltipProvider>
             {children}
