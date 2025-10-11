@@ -301,8 +301,7 @@ const AIServices = () => {
                         data-framer-background-image-wrapper="true"
                         style={{ position: "absolute", borderRadius: "inherit", inset: "0px" }}
                       >
-                        <img
-                          decoding="auto"
+                        <img decoding="auto"
                           width="154"
                           height="110"
                           src="https://framerusercontent.com/images/8x7d36XigNJwbX3MhEzcU6N7N8.png"
@@ -315,7 +314,7 @@ const AIServices = () => {
                             objectPosition: "center center",
                             objectFit: "contain",
                           }}
-                        />
+                         loading="lazy" decoding="async" />
                       </div>
                     </div>
                   </div>

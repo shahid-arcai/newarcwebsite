@@ -114,39 +114,35 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        {/* DNS Prefetch for faster external resource loading */}
+        {/* Critical Meta Tags */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        
+        {/* DNS Prefetch & Preconnect - Reduce request latency */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        
-        {/* Preconnect to critical external domains - HIGH PRIORITY */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Critical Favicon - Load only essential ones first */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        {/* Preload Critical Resources - Reduce LCP */}
+        <link rel="preload" as="image" href="/logo.png" type="image/png" fetchPriority="high" />
+        <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossOrigin="anonymous" />
+        
+        {/* Minimal Favicons - Defer non-critical */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
-        {/* Preload critical images to reduce LCP */}
-        <link rel="preload" as="image" href="/logo.png" type="image/png" />
-        
-        {/* Web App Manifest */}
+        {/* Web App Manifest - Deferred */}
         <link rel="manifest" href="/site.webmanifest" />
         
-        {/* Theme Color for Mobile Browsers */}
-        <meta name="theme-color" content="#000000" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
+        {/* Theme Colors */}
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         
-        {/* Viewport for responsive design with optimization */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        
-        {/* Performance hints */}
+        {/* Performance & Security Headers */}
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
-        
-        {/* Additional favicons loaded with lower priority */}
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" media="(prefers-color-scheme: dark)" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" media="(min-width: 768px)" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
       <body className={inter.className}>
         <PerformanceMonitor />

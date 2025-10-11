@@ -300,12 +300,11 @@ const Hero = memo(() => {
                     {[...Array(3)].map((_, setIndex) => (
                       <div key={setIndex} className="flex gap-8 shrink-0">
                         {[...Array(21)].map((_, i) => (
-                          <img
-                            key={i}
+                          <img key={i}
                             src={`/trust${i + 1}.png`}
                             alt={`Trusted client logo ${i + 1}`}
                             className="h-12 w-auto hover:scale-105 transition-transform"
-                          />
+                           loading="eager" fetchPriority="high" decoding="sync" />
                         ))}
                       </div>
                     ))}

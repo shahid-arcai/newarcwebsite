@@ -1,0 +1,21 @@
+# Browsers that we support (modern browsers only - no legacy JavaScript)
+
+[production]
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+not IE 11
+not op_mini all
+not android < 5
+not ios_saf < 12
+
+[modern]
+last 1 version
+> 1%
+not dead
+
+[development]
+last 1 chrome version
+last 1 firefox version
+last 1 safari version

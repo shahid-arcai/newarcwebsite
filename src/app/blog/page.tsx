@@ -194,7 +194,7 @@ export default function BlogPage() {
             className="flex items-center gap-4 mb-8 justify-center"
           >
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-orange-600 flex items-center justify-center p-2">
-              <img src="/favicon.png" alt="ARC AI" className="w-full h-full object-contain" />
+              <img src="/favicon.png" alt="ARC AI" className="w-full h-full object-contain"  loading="lazy" decoding="async" />
             </div>
             <div>
               <h3 className="text-xl font-bold">ARC Digital Canvas</h3>
@@ -254,11 +254,10 @@ export default function BlogPage() {
                   <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer">
                     {/* Background Image */}
                     <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
-                      <img
-                        src={post.image}
+                      <img src={post.image}
                         alt={post.title}
                         className="w-full h-full object-cover"
-                      />
+                       loading="lazy" decoding="async" />
                     </div>
 
                     {/* Overlay */}

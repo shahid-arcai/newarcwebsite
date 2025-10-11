@@ -21,11 +21,10 @@ export default function BlogPost() {
 
       <section className="relative min-h-[60vh] flex items-end px-4 md:px-8 pt-32 pb-12">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&auto=format&fit=crop&q=80"
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&auto=format&fit=crop&q=80"
             alt="Workflow Automation Tools"
             className="w-full h-full object-cover"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40" />
         </div>
         

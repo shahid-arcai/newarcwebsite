@@ -18,6 +18,17 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production' ? {
       exclude: ['error', 'warn'],
     } : false,
+    // Remove React properties for smaller bundle
+    reactRemoveProperties: process.env.NODE_ENV === 'production',
+  },
+  // Target modern browsers only (no legacy JavaScript)
+  modularizeImports: {
+    '@phosphor-icons/react': {
+      transform: '@phosphor-icons/react/dist/{{member}}',
+    },
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+    },
   },
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {

@@ -38,11 +38,10 @@ const Benefits = () => {
             {/* Col 1: Strategy */}
             <Card index={0} className="bg-white/[0.04] border-white/10">
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5">
-                <img
-                  src="https://framerusercontent.com/images/a26OzkC4NwHAkKLOWrAmK8WyvDg.png?width=482&height=390"
+                <img src="https://framerusercontent.com/images/a26OzkC4NwHAkKLOWrAmK8WyvDg.png?width=482&height=390"
                   alt="compass"
                   className="w-full h-full object-contain scale-105"
-                />
+                 loading="lazy" decoding="async" />
               </div>
               <h3 className="text-sm md:text-base font-semibold text-white mb-1">Strategy-First Approach</h3>
               <p className="text-[11px] md:text-xs text-zinc-400 leading-snug">Every decision is rooted in clarity, not guesswork.</p>
@@ -61,11 +60,10 @@ const Benefits = () => {
                     Quantity, Always
                   </h3>
                   <div className="absolute left-6 bottom-0 translate-y-[67%] w-16 md:w-20 select-none pointer-events-none">
-                    <img
-                      src="https://framerusercontent.com/images/XQgiis7gGdUPSeOOrtqD2Wy81Qg.png?width=207&height=1200"
+                    <img src="https://framerusercontent.com/images/XQgiis7gGdUPSeOOrtqD2Wy81Qg.png?width=207&height=1200"
                       alt="brush"
                       className="w-full h-auto object-cover"
-                    />
+                     loading="lazy" decoding="async" />
                   </div>
                   <p className="mt-auto text-[11px] md:text-xs text-white/80 leading-snug max-w-[150px] self-end text-right">
                     We focus on fewer projects to deliver better outcomes.
@@ -113,11 +111,10 @@ const Benefits = () => {
             {/* Col 3: Tailored */}
             <Card index={3} className="relative overflow-hidden p-0">
               <div className="relative w-full aspect-[4/3]">
-                <img
-                  src="https://framerusercontent.com/images/S9EGmxAIAkL8CpVbIxsP49rQKc.jpg?width=960&height=1200"
+                <img src="https://framerusercontent.com/images/S9EGmxAIAkL8CpVbIxsP49rQKc.jpg?width=960&height=1200"
                   alt="workspace"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-black/10 to-black/70" />
               </div>
               <div className="p-5">
@@ -134,10 +131,9 @@ const Benefits = () => {
             {/* Collaborative (wide) */}
             <Card index={4} className="relative overflow-hidden p-0 min-h-[260px]">
               <div className="absolute inset-0">
-                <img
-                  src="https://framerusercontent.com/images/t3N9e8rX8poj2CmWheGfHX2iME.jpg?width=1200&height=675"
+                <img src="https://framerusercontent.com/images/t3N9e8rX8poj2CmWheGfHX2iME.jpg?width=1200&height=675"
                   alt="collaborative"
-                  className="w-full h-full object-cover grayscale" />
+                  className="w-full h-full object-cover grayscale"  loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
               </div>
               <div className="relative flex flex-col justify-end h-full p-8">
@@ -163,16 +159,14 @@ const Benefits = () => {
                 <div className="relative mt-auto flex justify-end pr-2">
                   <div className="relative w-56 h-40">
                     <div className="absolute left-0 top-2 rotate-[-2deg] shadow-lg rounded-sm overflow-hidden border border-white/10 bg-black/40">
-                      <img
-                        src="https://framerusercontent.com/images/Anr44n9P3s2LFGs5EurkQxKVKdE.jpg?width=1200&height=600"
+                      <img src="https://framerusercontent.com/images/Anr44n9P3s2LFGs5EurkQxKVKdE.jpg?width=1200&height=600"
                         alt="drafts"
-                        className="h-28 w-44 object-cover" />
+                        className="h-28 w-44 object-cover"  loading="lazy" decoding="async" />
                     </div>
                     <div className="absolute left-16 top-0 rotate-3 shadow-lg rounded-sm overflow-hidden border border-white/10 bg-black/40">
-                      <img
-                        src="https://framerusercontent.com/images/UzRaWx7txCAaMyeaMOgrNtRtaY.jpg?width=824&height=1200"
+                      <img src="https://framerusercontent.com/images/UzRaWx7txCAaMyeaMOgrNtRtaY.jpg?width=824&height=1200"
                         alt="sketches"
-                        className="h-28 w-44 object-cover" />
+                        className="h-28 w-44 object-cover"  loading="lazy" decoding="async" />
                     </div>
                   </div>
                 </div>

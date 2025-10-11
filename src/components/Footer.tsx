@@ -348,11 +348,10 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img
-                src="/logo.png"
+              <img src="/logo.png"
                 alt="Arc AI Logo"
                 className="h-24 md:h-32 lg:h-40 w-auto object-contain"
-              />
+               loading="lazy" decoding="async" />
             </motion.div>
 
             {/* Tagline */}

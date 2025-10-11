@@ -114,6 +114,9 @@ const Navbar = memo(() => {
                 className="w-auto h-[70px] sm:h-[80px] cursor-pointer"
                 width="80"
                 height="80"
+                loading="eager"
+                fetchPriority="high"
+                decoding="sync"
               />
             </a>
 
@@ -164,6 +167,9 @@ const Navbar = memo(() => {
               }`}
               width="160"
               height="160"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
             />
           </a>
 

@@ -64,11 +64,10 @@ const Features = () => {
           >
             {/* Image Section - Left */}
             <div className="relative md:w-1/2 h-48 md:h-auto">
-              <img
-                src="https://framerusercontent.com/images/jt6hxbLaCBNrS66LsJbeYLxd4no.png?width=1200&height=1200"
+              <img src="https://framerusercontent.com/images/jt6hxbLaCBNrS66LsJbeYLxd4no.png?width=1200&height=1200"
                 alt="Cutting-Edge AI"
                 className="w-full h-full object-cover"
-              />
+               loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 via-transparent to-transparent" />
             </div>
 
@@ -151,11 +150,10 @@ const Features = () => {
 
             {/* Image Section - Right */}
             <div className="relative md:w-1/2 h-48 md:h-auto order-1 md:order-2">
-              <img
-                src="https://framerusercontent.com/images/NUbGSZcPrAH7CFfBazSJOsGIP4.png?width=800&height=1200"
+              <img src="https://framerusercontent.com/images/NUbGSZcPrAH7CFfBazSJOsGIP4.png?width=800&height=1200"
                 alt="AI-Powered Support"
                 className="w-full h-full object-cover"
-              />
+               loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-transparent to-transparent" />
             </div>
           </motion.div>

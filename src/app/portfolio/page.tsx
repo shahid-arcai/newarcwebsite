@@ -240,11 +240,10 @@ export default function Portfolio() {
               >
                 {/* Image Container */}
                 <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-6 bg-zinc-900">
-                  <img
-                    src={item.image}
+                  <img src={item.image}
                     alt={item.title}
                     className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-                  />
+                   loading="lazy" decoding="async" />
                   
                   {/* Status Badge */}
                   <div className="absolute top-4 right-4">

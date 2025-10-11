@@ -1,20 +1,26 @@
 // Server Component - Optimized for SEO
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Metadata } from "next";
+import dynamic from 'next/dynamic';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import ClientsSection from "@/components/ClientsSection";
-import Benefits from "@/components/Benefits";
-import Integrations from "@/components/Integrations";
-import Features from "@/components/Features";
-import AIServices from "@/components/AIServices";
-import WhyUs from "@/components/WhyUs";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
-import FloatingActions from "@/components/FloatingActions";
 import SchemaOrg from "@/components/SchemaOrg";
+
+// Dynamic imports for below-the-fold components (reduce initial bundle)
+const WhyUs = dynamic(() => import("@/components/WhyUs"), { ssr: true });
+const Benefits = dynamic(() => import("@/components/Benefits"), { ssr: true });
+const ClientsSection = dynamic(() => import("@/components/ClientsSection"), { ssr: true });
+const Services = dynamic(() => import("@/components/Services"), { ssr: true });
+const Features = dynamic(() => import("@/components/Features"), { ssr: true });
+const AIServices = dynamic(() => import("@/components/AIServices"), { ssr: true });
+const Integrations = dynamic(() => import("@/components/Integrations"), { ssr: true });
+const Process = dynamic(() => import("@/components/Process"), { ssr: true });
+const CTA = dynamic(() => import("@/components/CTA"), { ssr: true });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
+const FloatingActions = dynamic(() => import("@/components/FloatingActions"), { 
+  ssr: false, // No SSR needed for floating actions
+  loading: () => null 
+});
 
 // SEO Metadata for Homepage
 export const metadata: Metadata = {
@@ -79,52 +85,20 @@ export default function HomePage() {
         {/* Above the fold - load immediately */}
         <Hero />
         
-        {/* Below the fold - lazy load with Suspense */}
-        <Suspense fallback={<SectionLoader />}>
-          <WhyUs />
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <Benefits />
-        </Suspense>
-        
-        {/* Clients Section with spinning logos - moved under WHY CHOOSE US */}
-        <Suspense fallback={<SectionLoader />}>
-          <ClientsSection />
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <Services />
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <Features />
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <AIServices />
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <Integrations />
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <Process />
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <CTA />
-        </Suspense>
+        {/* Below the fold - dynamically imported and lazy loaded */}
+        <WhyUs />
+        <Benefits />
+        <ClientsSection />
+        <Services />
+        <Features />
+        <AIServices />
+        <Integrations />
+        <Process />
+        <CTA />
       </main>
       
-      <Suspense fallback={<SectionLoader />}>
-        <Footer />
-      </Suspense>
-      
-      <Suspense fallback={null}>
-        <FloatingActions />
-      </Suspense>
+      <Footer />
+      <FloatingActions />
     </div>
   );
 }
