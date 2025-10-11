@@ -22,9 +22,14 @@ const TypingText = memo(({ text }: { text: string }) => {
     }
   }, [currentIndex, text]);
 
+  // Split text into two lines at "INTO"
+  const line1 = displayedText.slice(0, 20); // "TRANSFORMING VISIONS"
+  const line2 = displayedText.slice(20); // " INTO REALITY."
+  
   return (
-    <h1 className="text-4xl md:text-6xl text-white tracking-tight text-center" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 700 }}>
-      {displayedText}
+    <h1 className="text-4xl md:text-6xl text-white tracking-tight text-center leading-tight" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 900 }}>
+      {line1}
+      {line2 && <><br />{line2}</>}
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
@@ -136,7 +141,7 @@ const LoadingScreen = memo(({ onLoadComplete }: LoadingScreenProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <TypingText text="WELCOME TO THE FUTURE" />
+            <TypingText text="TRANSFORMING VISIONS INTO REALITY." />
           </motion.div>
 
           {/* Optimized Loading Bar */}
