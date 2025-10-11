@@ -23,7 +23,7 @@ const TypingText = memo(({ text }: { text: string }) => {
   }, [currentIndex, text]);
 
   return (
-    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight text-center" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
       {displayedText}
       <motion.span
         animate={{ opacity: [1, 0] }}
