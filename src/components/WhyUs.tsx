@@ -99,7 +99,7 @@ const WhyUs: React.FC = () => {
                 data-framer-name="Description"
               >
                 <p>
-                  With a decade of expertise, We crafts bold brands and high-impact digital experience that get results.
+                  With 6+ years of expertise, We crafts bold brands and high-impact digital experience that get results.
                 </p>
               </div>
             </div>
