@@ -4,6 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SchemaOrg from "@/components/SchemaOrg";
 import ScrollToTop from "@/components/ScrollToTop";
+import ClientsSection from "@/components/ClientsSection";
+import AboutTextAnimation from "@/components/AboutTextAnimation";
+import ValuesSection from "@/components/ValuesSection";
+import PrinciplesSection from "@/components/PrinciplesSection";
 import { Rocket, Users, MapPin } from "lucide-react";
 
 // SEO Metadata for About Page
@@ -360,8 +364,19 @@ export default function About() {
         />
       </section>
 
+      {/* About Us Description Section */}
+      <AboutTextAnimation />
+
+      {/* Principles Section */}
+      <PrinciplesSection />
+
+      {/* Companies We Worked With Section */}
+      <ClientsSection />
+
+      {/* Values Section */}
+      <ValuesSection />
+
       <Footer />
     </div>
   );
 }
-

@@ -23,7 +23,7 @@ const ClientsSection = memo(() => {
   }));
 
   return (
-    <section className="relative py-12 md:py-20 bg-black overflow-hidden" id="clients">
+    <section className="relative pt-0 pb-12 md:pb-20 bg-black overflow-hidden" id="clients">
       <div className="relative w-full">
         <div className="relative flex flex-col items-center">
           {/* Spinning Circle with Images - Positioned higher to show only top half */}
@@ -100,12 +100,10 @@ const ClientsSection = memo(() => {
           {/* Content */}
           <div className="text-center space-y-6 max-w-4xl mx-auto relative z-10 px-6">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white tracking-tight">
-              <span className="inline-block">100+</span>{" "}
-              <span className="inline-block">clients</span>{" "}
-              <span className="inline-block">getting</span>{" "}
-              <span className="inline-block italic font-serif">better</span>{" "}
-              <span className="inline-block">design,</span>{" "}
-              <span className="inline-block">faster.</span>
+              <span className="inline-block">Companies</span>{" "}
+              <span className="inline-block">We</span>{" "}
+              <span className="inline-block">Worked</span>{" "}
+              <span className="inline-block">With</span>
             </h2>
 
             {/* CTA Button */}
