@@ -65,7 +65,7 @@ export default function BlogPage() {
       title: "SEO Optimization Best Practices to Rank #1 on Google",
       date: "Sep 20, 2025",
       category: "Digital Marketing",
-      image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&auto=format&fit=crop&q=80",
       excerpt: "Master the art of SEO with proven strategies for keyword research, on-page optimization, link building, and technical SEO to dominate search rankings.",
       tags: ["SEO", "Google Rankings", "Keyword Research", "Content Optimization"]
     },
@@ -110,7 +110,7 @@ export default function BlogPage() {
       title: "Influencer Marketing Strategy: Partner Your Way to Growth",
       date: "Aug 18, 2025",
       category: "Digital Marketing",
-      image: "https://images.unsplash.com/photo-1611926653670-e52b0fc8cc6e?w=800&auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop&q=80",
       excerpt: "Master influencer partnerships and authentic collaborations that drive real business results in 2025.",
       tags: ["Influencer Marketing", "Brand Partnerships", "Social Media", "Content Creator"]
     },
@@ -137,7 +137,7 @@ export default function BlogPage() {
       title: "Leveraging AI Analytics for Better Business Decisions",
       date: "Aug 8, 2025",
       category: "AI Automation",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&auto=format&fit=crop&q=80",
       excerpt: "Harness the power of AI analytics to gain actionable insights, predict trends, and make data-driven decisions that drive growth.",
       tags: ["AI Analytics", "Business Intelligence", "Data Analysis", "Predictive Analytics"]
     },
@@ -146,7 +146,7 @@ export default function BlogPage() {
       title: "Conversion Rate Optimization: Turn Visitors into Customers",
       date: "Aug 5, 2025",
       category: "Digital Marketing",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=80",
       excerpt: "Discover proven CRO strategies, A/B testing techniques, and UX improvements to dramatically increase your website conversion rates.",
       tags: ["CRO", "Conversion Optimization", "A/B Testing", "User Experience"]
     },

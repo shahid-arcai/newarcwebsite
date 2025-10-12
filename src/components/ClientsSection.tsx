@@ -100,10 +100,10 @@ const ClientsSection = memo(() => {
           {/* Content */}
           <div className="text-center space-y-6 max-w-4xl mx-auto relative z-10 px-6">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white tracking-tight">
-              <span className="inline-block">Companies</span>{" "}
-              <span className="inline-block">We</span>{" "}
-              <span className="inline-block">Worked</span>{" "}
-              <span className="inline-block">With</span>
+              <span className="inline-block">Trusted</span>{" "}
+              <span className="inline-block">by</span>{" "}
+              <span className="inline-block">brands</span>{" "}
+              <span className="inline-block">worldwide</span>
             </h2>
 
             {/* CTA Button */}

@@ -145,12 +145,13 @@ const Navbar = memo(() => {
 
             {/* CTA Button and Menu */}
             <div className="flex items-center gap-2">
-              <button 
+              <a 
+                href="/contact"
                 className={`px-5 py-2.5 rounded-full border border-white/20 text-xs font-semibold tracking-wider text-white hover:bg-white/10 transition-all duration-300 ${isMenuOpen ? 'opacity-0 invisible w-0 px-0' : 'opacity-100 visible'}`}
                 aria-label="Contact us"
               >
                 LET'S TALK
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -197,12 +198,13 @@ const Navbar = memo(() => {
 
             {/* CTA Button and Menu - Close together */}
             <div className="flex items-center gap-2 md:gap-3">
-              <button 
+              <a 
+                href="/contact"
                 className={`px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-white/20 text-sm lg:text-base font-semibold tracking-wider text-white hover:bg-white/10 transition-all duration-300 ${isMenuOpen ? 'opacity-0 invisible w-0 px-0' : 'opacity-100 visible'}`}
                 aria-label="Contact us"
               >
                 LET'S TALK
-              </button>
+              </a>
             </div>
           </div>
         </div>

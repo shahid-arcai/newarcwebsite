@@ -162,7 +162,7 @@ const Features = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
           <a
-            href="#pricing"
+            href="/contact"
             className="group inline-flex items-center gap-1.5 px-5 py-2.5 bg-white text-black text-sm font-semibold rounded-lg shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300"
           >
             <span>Get Started</span>
@@ -177,7 +177,7 @@ const Features = () => {
           </a>
 
           <a
-            href="#services"
+            href="/services"
             className="group inline-flex items-center gap-1.5 px-5 py-2.5 bg-zinc-900 border border-zinc-800 text-white text-sm font-semibold rounded-lg shadow-xl hover:bg-zinc-800 hover:border-zinc-700 hover:scale-105 transition-all duration-300"
           >
             <span>See Our Services</span>

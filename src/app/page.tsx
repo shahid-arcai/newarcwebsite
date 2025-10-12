@@ -19,7 +19,7 @@ const ClientsSection = dynamic(() => import("@/components/ClientsSection"), {
   ssr: true,
   loading: () => <SectionLoader />
 });
-const Services = dynamic(() => import("@/components/Services"), { 
+const ServicesSection = dynamic(() => import("@/components/ServicesSection"), { 
   ssr: true,
   loading: () => <SectionLoader />
 });
@@ -28,6 +28,14 @@ const Features = dynamic(() => import("@/components/Features"), {
   loading: () => <SectionLoader />
 });
 const AIServices = dynamic(() => import("@/components/AIServices"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const ProblemSection = dynamic(() => import("@/components/ProblemSection"), { 
+  ssr: true,
+  loading: () => <SectionLoader />
+});
+const SolutionSection = dynamic(() => import("@/components/SolutionSection"), { 
   ssr: true,
   loading: () => <SectionLoader />
 });
@@ -118,7 +126,9 @@ export default function HomePage() {
         <WhyUs />
         <Benefits />
         <ClientsSection />
-        <Services />
+        <ProblemSection />
+        <SolutionSection />
+        <ServicesSection />
         <Features />
         <AIServices />
         <Integrations />
