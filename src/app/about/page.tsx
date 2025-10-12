@@ -7,7 +7,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ClientsSection from "@/components/ClientsSection";
 import AboutTextAnimation from "@/components/AboutTextAnimation";
 import ValuesSection from "@/components/ValuesSection";
-import PrinciplesSection from "@/components/PrinciplesSection";
+import JourneySection from "@/components/JourneySection";
+import IndustriesSection from "@/components/IndustriesSection";
 import { Rocket, Users, MapPin } from "lucide-react";
 
 // SEO Metadata for About Page
@@ -367,14 +368,17 @@ export default function About() {
       {/* About Us Description Section */}
       <AboutTextAnimation />
 
-      {/* Principles Section */}
-      <PrinciplesSection />
+      {/* Mission, Vision & Founder's Note Section */}
+      <ValuesSection />
 
       {/* Companies We Worked With Section */}
       <ClientsSection />
 
-      {/* Values Section */}
-      <ValuesSection />
+      {/* Our Journey Timeline Section */}
+      <JourneySection />
+
+      {/* Industries We Serve Section */}
+      <IndustriesSection />
 
       <Footer />
     </div>

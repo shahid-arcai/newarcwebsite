@@ -96,7 +96,7 @@ const AboutTextAnimation = () => {
   }, [hasStarted, words.length]);
 
   return (
-    <section ref={sectionRef} className="relative py-20 px-6 bg-black">
+    <section ref={sectionRef} className="relative pt-8 md:pt-20 pb-20 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
         <div 
           className="bg-white/5 backdrop-blur-sm rounded-[40px] p-8 md:p-12 lg:p-16 border border-white/10"
