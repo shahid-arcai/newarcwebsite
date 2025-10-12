@@ -131,7 +131,7 @@ const Hero = memo(() => {
           <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" aria-hidden="true" />
         )}
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+  <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
         {/* Circular/Radial fade at edges (vignette effect) */}
         <div 
           className="absolute inset-0" 

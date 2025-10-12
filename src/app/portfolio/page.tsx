@@ -172,7 +172,7 @@ export default function Portfolio() {
     },
     {
       id: 15,
-      title: "Busy-Parent Fitness Guide",
+      title: "Joe Fitness",
       description: "Lead-magnet microsite with a tight value ladder.",
       results: "Lead capture 38%, Cost/lead ↓ 23%, Email open rate 41%, Guide downloads 820/mo",
       image: "/mellifluous-jalebi.png",
@@ -199,12 +199,36 @@ export default function Portfolio() {
     },
     {
       id: 18,
-      title: "Arc AI Portfolio",
+      title: "Bakery website",
       description: "Modern AI-powered portfolio showcase with advanced animations.",
       results: "Currently in development",
       image: "/prismatic-mooncake.png",
       link: "https://prismatic-mooncake-640ca9.netlify.app",
       status: "development"
+    },
+  ];
+
+  const customTemplates = [
+    {
+      id: 1,
+      title: "Luxury Restaurant",
+      description: "Elegant restaurant template with sophisticated design and seamless user experience.",
+      image: "/luxary restaurent.png",
+      link: "https://luxaryrestaurant-demo.netlify.app/",
+    },
+    {
+      id: 2,
+      title: "Travel Agency",
+      description: "Modern travel agency template designed to inspire wanderlust and drive bookings.",
+      image: "/travelagency.png",
+      link: "https://beautiful-conkies-2df92d.netlify.app/",
+    },
+    {
+      id: 3,
+      title: "Real Estate",
+      description: "Professional real estate template with property listings and advanced search features.",
+      image: "/real-estate.png",
+      link: "https://silly-bombolone-0213cb.netlify.app/",
     },
   ];
 
@@ -319,6 +343,69 @@ export default function Portfolio() {
                       {item.results}
                     </p>
                   </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Coded Templates Section */}
+      <section className="relative px-6 lg:px-12 pb-32">
+        <div className="max-w-[1800px] w-full mx-auto">
+          {/* Section Heading */}
+          <div className="mb-16 text-center">
+            <h2 
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-tight"
+              style={{
+                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+              }}
+            >
+              Custom Coded Templates
+            </h2>
+            <div className="w-24 h-1 bg-[rgb(255,73,37)] mx-auto mt-6"></div>
+          </div>
+
+          {/* Templates Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {customTemplates.map((template, index) => (
+              <a
+                key={template.id}
+                href={template.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer transition-all duration-700 opacity-100 translate-y-0"
+                style={{
+                  transitionDelay: `${index * 150}ms`,
+                }}
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-6 bg-zinc-900">
+                  <img 
+                    src={template.image}
+                    alt={template.title}
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy" 
+                    decoding="async" 
+                  />
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-700" />
+                </div>
+
+                {/* Template Info */}
+                <div className="space-y-3">
+                  <h3
+                    className="text-2xl md:text-3xl font-bold text-white group-hover:text-[rgb(255,73,37)] transition-colors duration-300 uppercase"
+                    style={{
+                      fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                    }}
+                  >
+                    {template.title}
+                  </h3>
+                  <p className="text-base text-zinc-300 leading-relaxed">
+                    {template.description}
+                  </p>
                 </div>
               </a>
             ))}
