@@ -1,9 +1,11 @@
 "use client";
 
 import { memo, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ClientsSection = memo(() => {
   const [rotation, setRotation] = useState(0);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
   useEffect(() => {
     const animate = () => {
@@ -12,6 +14,19 @@ const ClientsSection = memo(() => {
     const interval = setInterval(animate, 16); // ~60fps
     return () => clearInterval(interval);
   }, []);
+
+  const openCalendly = () => {
+    setIsCalendlyOpen(true);
+    // Load Calendly widget
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+  };
+
+  const closeCalendly = () => {
+    setIsCalendlyOpen(false);
+  };
 
   // Array of trust logos (1-21)
   const logos = Array.from({ length: 21 }, (_, i) => `/trust${i + 1}.png`);
@@ -108,9 +123,9 @@ const ClientsSection = memo(() => {
 
             {/* CTA Button */}
             <div className="flex justify-center pt-2">
-              <a
-                href="#book-a-call"
-                className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border-4 border-neutral-100 shadow-lg hover:shadow-xl transition-all duration-300"
+              <button
+                onClick={openCalendly}
+                className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border-4 border-neutral-100 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                 style={{
                   boxShadow:
                     "rgba(108, 113, 128, 0.08) 0px 2px 4px 0px, rgba(108, 113, 128, 0.07) 0px 7px 7px 0px, rgba(108, 113, 128, 0.04) 0px 17px 10px 0px, rgba(108, 113, 128, 0.01) 0px 29px 12px 0px",
@@ -125,11 +140,61 @@ const ClientsSection = memo(() => {
                     <span className="text-xs text-gray-500">Available now</span>
                   </div>
                 </div>
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Calendly Modal */}
+      <AnimatePresence>
+        {isCalendlyOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeCalendly}
+          >
+            <motion.div
+              className="bg-white rounded-2xl w-full max-w-4xl h-[90vh] overflow-hidden relative"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeCalendly}
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-900 hover:bg-gray-800 text-white rounded-full flex items-center justify-center transition-colors"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+
+              {/* Calendly Embed */}
+              <div className="w-full h-full">
+                <div
+                  className="calendly-inline-widget w-full h-full"
+                  data-url="https://calendly.com/shahid-arcai-_xeu/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                  style={{ minWidth: '320px', height: '100%' }}
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 });
