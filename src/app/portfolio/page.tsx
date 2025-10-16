@@ -136,6 +136,15 @@ export default function Portfolio() {
     },
     {
       id: 11,
+      title: "ARC AI CRM System",
+      description: "Custom-built CRM system with AI-powered features for streamlined client management and automation.",
+      results: "Enhanced client tracking, Automated workflows, AI-driven insights, Improved team collaboration",
+      image: "/arc crm system.png",
+      link: "#",
+      status: "live"
+    },
+    {
+      id: 12,
       title: "Fit Bite",
       description: "Handcrafted protein-cookie brand with Ceylon flavors and custom protein (10–50 g).",
       results: "Online sales ↑ 21%, AOV ↑ 11%, Subscribe-and-save uptake 7.9%, Repeat purchase 24%",
@@ -144,7 +153,7 @@ export default function Portfolio() {
       status: "development"
     },
     {
-      id: 12,
+      id: 13,
       title: "Ceylon Tea Land",
       description: "Exporter presence highlighting authentic highland teas and sustainability.",
       results: "Export enquiries ↑ 32%, Sample requests 58/mo, Top-10 keyword count 4 → 11, Intl. sessions ↑ 37%",
@@ -153,7 +162,7 @@ export default function Portfolio() {
       status: "development"
     },
     {
-      id: 13,
+      id: 14,
       title: "Inlaid Jewelry",
       description: "Three-generation family jeweler blending Tamil tradition with modern elegance.",
       results: "Custom consults ↑ 28%, High-ticket orders ↑ 17%, Avg. session value ↑ 13%, Organic clicks ↑ 36%",
@@ -162,7 +171,7 @@ export default function Portfolio() {
       status: "development"
     },
     {
-      id: 14,
+      id: 15,
       title: "Hijab Boutique",
       description: "Premium hijabs & modest fashion with streamlined PDPs and 30-day free returns.",
       results: "Conversion rate ↑ +0.9pp (to 2.8%), Return rate ↓ 8%, Mobile CVR ↑ +1.1pp, Checkout abandonment ↓ 6%",
@@ -171,7 +180,7 @@ export default function Portfolio() {
       status: "development"
     },
     {
-      id: 15,
+      id: 16,
       title: "Joe Fitness",
       description: "Lead-magnet microsite with a tight value ladder.",
       results: "Lead capture 38%, Cost/lead ↓ 23%, Email open rate 41%, Guide downloads 820/mo",
@@ -180,7 +189,7 @@ export default function Portfolio() {
       status: "development"
     },
     {
-      id: 16,
+      id: 17,
       title: "Essential Marketing",
       description: "Studio site turning briefs into bookable packages.",
       results: "Booked projects ↑ 22%, Proposal acceptance ↑ +6.4pp (to 38%), Pipeline value LKR 14.6M, Avg. response time ↓ 19%",
@@ -189,7 +198,7 @@ export default function Portfolio() {
       status: "development"
     },
     {
-      id: 17,
+      id: 18,
       title: "Ceylon Motors",
       description: "Car discovery hub for buy/rent with type & price filters.",
       results: "Filtered searches ↑ 33%, Dealer contacts 210/mo, Bounce ↓ 12%, Session duration 3:04",
@@ -198,7 +207,7 @@ export default function Portfolio() {
       status: "development"
     },
     {
-      id: 18,
+      id: 19,
       title: "Bakery website",
       description: "Modern AI-powered portfolio showcase with advanced animations.",
       results: "Currently in development",
@@ -229,6 +238,27 @@ export default function Portfolio() {
       description: "Professional real estate template with property listings and advanced search features.",
       image: "/real-estate.png",
       link: "https://silly-bombolone-0213cb.netlify.app/",
+    },
+    {
+      id: 4,
+      title: "Corporate Website",
+      description: "Professional corporate website template with modern design and clean aesthetics.",
+      image: "/Corporate website.png",
+      link: "https://courageous-fenglisu-1afb0d.netlify.app/",
+    },
+    {
+      id: 5,
+      title: "Music/Radio Website",
+      description: "Dynamic music and radio website template with engaging multimedia features.",
+      image: "/Musicradio website.png",
+      link: "https://music-demo1.netlify.app/",
+    },
+    {
+      id: 6,
+      title: "Travel/Tourism",
+      description: "Stunning travel and tourism website template designed to showcase destinations.",
+      image: "/traveltourism.png",
+      link: "https://delftdemo.netlify.app/",
     },
   ];
 
@@ -350,7 +380,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Custom Coded Templates Section */}
+      {/* Demos built for clients Section */}
       <section className="relative px-6 lg:px-12 pb-32">
         <div className="max-w-[1800px] w-full mx-auto">
           {/* Section Heading */}
@@ -361,7 +391,7 @@ export default function Portfolio() {
                 fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
               }}
             >
-              Custom Coded Templates
+              Demos built for clients
             </h2>
             <div className="w-24 h-1 bg-[rgb(255,73,37)] mx-auto mt-6"></div>
           </div>
